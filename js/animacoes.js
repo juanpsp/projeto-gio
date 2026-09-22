@@ -15,7 +15,10 @@
     // Enquanto estiver vazio, os botões rolam até a seção de contato.
     whatsapp: '',
     // Mensagem que já vem digitada pro visitante
-    mensagem: 'Oi Gio! Vi seu site e quero saber mais sobre as aulas de francês.'
+    mensagem: 'Oi Gio! Vi seu site e quero saber mais sobre as aulas de francês.',
+    // Usuário do Instagram, sem o @. Ex.: 'gio.frances'
+    // Enquanto estiver vazio, o ícone do topo fica marcado como pendente.
+    instagram: ''
   };
 
   // Escape só para revisão: mostra as animações mesmo num navegador com
@@ -48,6 +51,25 @@
       a.href = url;
       a.target = '_blank';
       a.rel = 'noopener';
+    });
+  })();
+
+  /* ─────────────────────────────────────────────────────────────
+     1b. Links do Instagram (ícone do topo e link do rodapé)
+     ───────────────────────────────────────────────────────────── */
+  (function ligaInstagram() {
+    var usuario = (CONFIG.instagram || '').replace(/^@/, '').trim();
+    if (!usuario) return;
+    $$('[data-insta]').forEach(function (a) {
+      a.href = 'https://www.instagram.com/' + encodeURIComponent(usuario) + '/';
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.removeAttribute('data-pendente');
+    });
+    // Onde o @ aparece escrito (link do rodapé)
+    $$('[data-insta-nome]').forEach(function (el) {
+      el.textContent = '@' + usuario;
+      el.removeAttribute('data-pendente');
     });
   })();
 
@@ -345,6 +367,97 @@
       var inicio = Math.max(0, topoNoDoc - window.innerHeight * 0.95);
       var curso = Math.max(320, window.innerHeight * 0.62);
       desenha(Math.max(0, Math.min(1, (window.scrollY - inicio) / curso)));
+    }
+    function pede() { if (!agendado) { agendado = true; requestAnimationFrame(calcula); } }
+
+    window.addEventListener('scroll', pede, { passive: true });
+    window.addEventListener('resize', pede);
+    window.addEventListener('load', calcula);
+    calcula();
+  })();
+
+  /* ─────────────────────────────────────────────────────────────
+     6c. A viagem no quadro
+     A seção é alta e o palco fica grudado na tela (sticky). A rolagem
+     lá dentro vira um progresso de 0 a 1, dividido em etapas: em cada
+     uma o lápis passa num monumento (--p de 0 a 1 no grupo dele; o CSS
+     transforma isso em traço aparecendo). Voltando pra cima, apaga.
+     Sem movimento: nada gruda e tudo já está desenhado.
+     ───────────────────────────────────────────────────────────── */
+  (function viagem() {
+    var secao = $('.viagem');
+    if (!secao || menosMovimento) return;
+    var palco = $('.viagem__palco', secao);
+    var monumentos = $$('.monumento', secao);
+    if (!palco) return;
+
+    // Trecho da rolagem de cada monumento: Torre, Louvre, Arco
+    var ETAPAS = [[0.08, 0.34], [0.38, 0.64], [0.68, 0.94]];
+
+    // O palco gruda logo abaixo da barra de topo, que muda de altura
+    // entre celular e desktop.
+    function medeTopo() {
+      if (topo) document.documentElement.style.setProperty('--altura-topo', topo.offsetHeight + 'px');
+    }
+
+    function limita(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+    function aplica(p) {
+      var etapa = 0;
+      monumentos.forEach(function (m, i) {
+        var e = ETAPAS[i];
+        if (!e) return;
+        var q = limita((p - e[0]) / (e[1] - e[0]));
+        m.style.setProperty('--p', q.toFixed(3));
+        if (q > 0.12) etapa = i + 1;
+      });
+      if (secao.getAttribute('data-etapa') !== String(etapa)) secao.setAttribute('data-etapa', etapa);
+    }
+
+    var agendado = false;
+    function calcula() {
+      agendado = false;
+      var r = secao.getBoundingClientRect();
+      var curso = r.height - palco.offsetHeight;
+      if (curso <= 0) { aplica(1); return; }
+      var cola = parseFloat(getComputedStyle(palco).top) || 0;
+      aplica(limita((cola - r.top) / curso));
+    }
+    function pede() { if (!agendado) { agendado = true; requestAnimationFrame(calcula); } }
+
+    medeTopo();
+    window.addEventListener('scroll', pede, { passive: true });
+    window.addEventListener('resize', function () { medeTopo(); pede(); });
+    window.addEventListener('load', calcula);
+    calcula();
+  })();
+
+  /* ─────────────────────────────────────────────────────────────
+     6d. A rota dos países (Você sabia?)
+     A linha vermelha tracejada desce conforme a lista passa pela tela
+     e cada país aparece quando ela chega nele. Sem trava de rolagem:
+     a seção ocupa só o próprio tamanho. Voltando pra cima, apaga.
+     ───────────────────────────────────────────────────────────── */
+  (function rotaDosPaises() {
+    var lista = $('.paises');
+    if (!lista || menosMovimento) return;
+    var paises = $$('.pais', lista);
+
+    var agendado = false;
+    function calcula() {
+      agendado = false;
+      var r = lista.getBoundingClientRect();
+      if (!r.height) return;
+      // Começa quando o topo da lista chega a 85% da janela e termina
+      // quando o fim dela passa de 60%: dá pra ver cada país chegando.
+      var ini = window.innerHeight * 0.85, fim = window.innerHeight * 0.6;
+      var p = (ini - r.top) / (r.height + ini - fim);
+      p = p < 0 ? 0 : p > 1 ? 1 : p;
+      lista.style.setProperty('--rota', p.toFixed(3));
+      paises.forEach(function (li) {
+        var meio = (li.offsetTop + li.offsetHeight / 2) / r.height;
+        li.classList.toggle('is-dentro', p >= meio - 0.04);
+      });
     }
     function pede() { if (!agendado) { agendado = true; requestAnimationFrame(calcula); } }
 

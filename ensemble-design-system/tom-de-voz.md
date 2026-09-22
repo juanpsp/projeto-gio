@@ -25,13 +25,13 @@ Frases prontas para os componentes. Troque à vontade, mantendo o jeito: curto, 
 
 **Balões:** Bonjour! Tudo bem por aí? · Hmm… como era "saudade" em francês mesmo? · psiu: ninguém nasce sabendo o *subjonctif* · Oh là là, você acertou! · Errou? Ótimo. Agora a gente sabe o que treinar.
 
-**Títulos de seção:** On apprend ensemble. · Errar faz parte (e é engraçado) · Oi! Eu também ainda estou aprendendo · Como funcionam as aulas · Quem já destravou · Bora destravar esse francês?
+**Títulos de seção:** On apprend ensemble. · Oi! Eu já estive no seu lugar · Eu sei o caminho porque fiz ele · Você aprende a aprender · Como funcionam as aulas · Quem já destravou · Bora destravar esse francês?
 
-**Anotações à mão:** psiu, isso cai muito! · sem pressão, prometo · e contando! · (seu nome) · é aqui que a mágica acontece · olha isso!
+**Anotações à mão:** psiu, isso cai muito! · sem pressão, prometo · e contando! · e não parei de estudar! · (seu nome) · é aqui que a mágica acontece · olha isso!
 
 **Adesivos e selos:** Oh là là! · C'est parti! · Bonjour! · Zéro stress · Merci! · Nouveau! · Sem medo de errar · a gente aprende junto
 
-**Dicas e erros comuns:** Dica da prof · Erro que eu também já cometi · Falso amigo clássico! · Como é a primeira aula
+**Dicas e erros comuns:** Dica da prof · Erro clássico de quem está começando · Falso amigo clássico! · Como é a primeira aula
 
 **Formulário:** Comment tu t'appelles? (seu nome) · Seu nível hoje · Por que francês? · Viagem, trabalho, amor, série francesa… vale tudo. · Quero receber dicas de francês por e-mail (prometo não lotar sua caixa)
 
@@ -44,3 +44,4 @@ Frases prontas para os componentes. Troque à vontade, mantendo o jeito: curto, 
 - "Clique aqui", "Saiba mais", "Inscreva-se já", "Últimas vagas!", "Método revolucionário", "Fluência em 30 dias".
 - Francês difícil sem tradução, mais de uma expressão por frase, trocadilho que precisa de explicação.
 - Diminutivos em excesso ("aulinha rapidinha"), "tia", emoji na interface, várias exclamações seguidas.
+- A professora errando, em dúvida ou se justificando: "eu ainda sou aluna", "até eu fico em dúvida", "eu erro até hoje", "eu podia esconder isso". Ela já fez o caminho e continua estudando por dedicação; quem erra à vontade é o aluno.

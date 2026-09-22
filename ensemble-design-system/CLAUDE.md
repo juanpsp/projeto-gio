@@ -1,6 +1,6 @@
 # Ensemble — design system (instruções para o Claude Code)
 
-Identidade de uma professora de francês que também é estudante. A ideia central é **on apprend ensemble**: ela está do mesmo lado do aluno, lembra como é errar e travar, e deixa o aprendizado leve. Acolhedor e descontraído, **nunca infantil, bagunçado ou apelativo**.
+Identidade de uma professora de francês que já esteve no lugar do aluno: começou do zero, sabe o caminho e continua estudando todo dia. A ideia central é **on apprend ensemble**: ela está do mesmo lado do aluno, sabe onde o francês trava, ensina a aprender e deixa o aprendizado leve. Acolhedor e descontraído, **nunca infantil, bagunçado ou apelativo**.
 
 Ao construir qualquer tela, página ou componente deste projeto, **use este sistema em vez de inventar estilos**. Só crie algo novo se nada aqui servir, e então siga os tokens e o mesmo jeito de desenhar (contorno `encre` de 2px, cantos redondos, sombra chapada).
 
@@ -79,7 +79,7 @@ Tamanhos: `--sm` 20px, padrão 24px, `--lg` 32px. Em card, use `.en-icone-circul
 
 ## Textos
 
-Siga o tom de voz do `README.md` e pegue frases em `tom-de-voz.md`: curto, próximo, com uma pitada de francês por bloco ("Bonjour!", "C'est parti!", "Oh là là", "On apprend ensemble"), erro sempre tratado como parte do caminho, zero pressão de venda ("últimas vagas!", "método revolucionário" estão proibidos).
+Siga o tom de voz do `README.md` e pegue frases em `tom-de-voz.md`: curto, próximo, com uma pitada de francês por bloco ("Bonjour!", "C'est parti!", "Oh là là", "On apprend ensemble"), erro do aluno sempre tratado como parte do caminho, a professora sempre com a segurança de quem já fez o caminho (nunca errando, em dúvida ou se desculpando por ainda estudar — ver "A narrativa" no `README.md`), zero pressão de venda ("últimas vagas!", "método revolucionário" estão proibidos).
 
 ## Atenção ao conteúdo de exemplo
 

@@ -15,8 +15,9 @@ Página única em HTML + CSS + JS puro, construída sobre o design system
 
 ## No ar
 
-**https://juanpsp.github.io/teacher-gio/** — GitHub Pages, servindo a branch
+**https://juanpsp.github.io/projeto-gio/** — GitHub Pages, servindo a branch
 `main` a partir da raiz. Cada `git push` republica sozinho em 1–2 minutos.
+(O repositório se chamava `teacher-gio`; o link antigo não funciona mais.)
 
 > ⚠️ **É uma versão de revisão, não o lançamento.** O painel de revisão e o
 > conteúdo provisório estão no ar, e o repositório é **público** (GitHub Pages
@@ -40,10 +41,11 @@ pelo `file://` também funciona, mas as fontes do Google só carregam com intern
 
 | Caminho | O que é |
 | --- | --- |
-| `index.html` | A página inteira, as 12 seções |
+| `index.html` | A página inteira: as 12 seções, mais o quadro do Sena (3b) e o "Você sabia?" (11b) |
 | `css/pagina.css` | Layout da página + movimento + marcação de conteúdo provisório |
 | `js/animacoes.js` | Todo o movimento. **A configuração fica no topo do arquivo.** |
-| `img/` | Fotos. `gio-recorte.*` (fundo removido), `gio-retrato.*` (polaroid) |
+| `img/` | Fotos. `gio-recorte.*` (fundo removido), `gio-retrato.*` (polaroid), `gio-selfie-esboco.*` (a Gio em grafite no quadro — **provisória**, sai quando chegar a ilustração definitiva) |
+| `ferramentas/cena-sena.js` | Gera o desenho do quadro (Sena, Torre, Louvre, Arco) e injeta no `index.html`. Mudou o desenho? `node ferramentas/cena-sena.js` |
 | `ensemble-design-system/` | O design system. **Não editar a partir da landing.** |
 
 A landing carrega os CSS do sistema por caminho relativo, então o sistema
@@ -58,12 +60,17 @@ Em `js/animacoes.js`, no topo:
 ```js
 var CONFIG = {
   whatsapp: '',   // ex.: '5511999999999' — DDI + DDD + número, só dígitos
-  mensagem: 'Oi Gio! Vi seu site e quero saber mais sobre as aulas de francês.'
+  mensagem: 'Oi Gio! Vi seu site e quero saber mais sobre as aulas de francês.',
+  instagram: ''   // ex.: 'gio.frances' — só o usuário, sem o @
 };
 ```
 
 Enquanto estiver vazio, todos os botões rolam até a seção de contato.
 Preenchido, os 9 botões viram link de WhatsApp de uma vez.
+
+O `instagram` liga o ícone da barra de topo e o link do rodapé (que passa a
+mostrar o @). Vazio, os dois apontam pra página inicial do Instagram e o
+rodapé mostra `[Instagram]` marcado como pendente.
 
 ### 2. O conteúdo real
 

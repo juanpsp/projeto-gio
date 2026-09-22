@@ -7,4 +7,4 @@ Mensagens em estilo chat para encenar a troca entre professora e aluno (seções
 - `.en-msg--digitando` com três `<i>` mostra os três pontinhos; bom para fechar a conversa com suspense.
 - Mantenha 4 a 6 mensagens: é uma cena, não um roteiro.
 
-**Microtextos:** "Bonjour! Comment ça va?" / "Ça va! …eu acho?" / "Resposta perfeita. Até eu fico em dúvida às vezes, viu?" / "Pode e deve. C'est comme ça qu'on apprend!"
+**Microtextos:** "Bonjour! Comment ça va?" / "Ça va! …eu acho?" / "Resposta perfeita. Viu? Você já sabe mais do que acha." / "Pode e deve. C'est comme ça qu'on apprend!"

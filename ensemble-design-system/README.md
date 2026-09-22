@@ -1,11 +1,21 @@
-Ensemble é a identidade de uma professora de francês que também é estudante. Ela já dá aula e ainda está se formando no idioma, e isso é o coração da marca: **on apprend ensemble**, a gente aprende junto. Ela está do mesmo lado do aluno, lembra como é errar e travar, e deixa o aprendizado leve. Tudo aqui deve fazer a pessoa se sentir à vontade para errar, rir e mandar uma piada, sem ficar infantil, bagunçado ou apelativo.
+Ensemble é a identidade de uma professora de francês que já esteve no lugar do aluno. Ela começou do zero, sabe o caminho e continua estudando todo dia, e isso é o coração da marca: **on apprend ensemble**, a gente aprende junto. Ela está do mesmo lado do aluno, sabe exatamente onde o francês trava, ensina a aprender e deixa o aprendizado leve. Tudo aqui deve fazer a pessoa se sentir à vontade para errar, rir e mandar uma piada, e ao mesmo tempo confiar que está em boas mãos, sem ficar infantil, bagunçado ou apelativo.
+
+## A narrativa
+
+Três ideias, nesta ordem de força:
+
+1. **Eu estive no seu lugar.** Ela começou do zero, como o aluno, e fez o caminho inteiro. Por isso sabe o que confunde, em que ordem as coisas fazem sentido e o que destrava cada etapa.
+2. **Eu continuo estudando.** Por dedicação de profissional: estuda todo dia e testa em si mesma o que leva pra aula. Nunca como desculpa ou justificativa.
+3. **Eu te ensino a aprender.** Além do francês, ela mostra como estudar: o que revisar, como treinar o ouvido, como seguir evoluindo sozinho entre as aulas.
+
+O aluno pode errar à vontade: isso é acolhimento. Quem **não** aparece errando, em dúvida ou se desculpando é a professora. Nada de "eu ainda sou aluna", "até eu fico em dúvida", "eu erro até hoje" ou "eu podia esconder isso".
 
 ## Tom de voz
 
-- **Próxima, de igual para igual.** Fale com "você", em português do dia a dia ("pra", "a gente", "bora"). A professora fala em primeira pessoa: "eu também já errei isso".
+- **Próxima, de igual para igual.** Fale com "você", em português do dia a dia ("pra", "a gente", "bora"). A professora fala em primeira pessoa, com a segurança de quem já fez o caminho: "eu também comecei do zero", "eu sei onde isso trava".
 - **Uma pitada de francês por bloco.** Expressões curtas e fáceis de entender pelo contexto: "Bonjour!", "Oh là là", "C'est parti!", "On apprend ensemble", "Merci!", "Zéro stress". Se a expressão não é óbvia, traduza logo em seguida.
-- **Humor leve, nunca às custas do aluno.** Pode rir do erro (inclusive dos dela), de falsos amigos, do *subjonctif*. Nunca ironia com quem não sabe.
-- **Erro é bem-vindo.** Sempre trate o erro como parte do caminho: "Errou? Ótimo, agora a gente sabe o que treinar."
+- **Humor leve, nunca às custas do aluno.** Pode rir do erro junto com o aluno, de falsos amigos, do *subjonctif*. Nunca ironia com quem não sabe.
+- **Erro do aluno é bem-vindo.** Sempre trate o erro de quem está aprendendo como parte do caminho: "Errou? Ótimo, agora a gente sabe o que treinar."
 - **Sem infantilizar.** Nada de "tia", diminutivos em excesso, "aprenda brincando" ou muitas exclamações (uma por frase, no máximo). Nada de emoji na interface: use os ícones e rabiscos.
 - **Sem pressão de venda.** Nada de "últimas vagas!", contagem regressiva ou "método revolucionário". Convite, não empurrão.
 - **Caixa de frase** em títulos e botões ("Como funcionam as aulas"), nunca TUDO EM MAIÚSCULAS, exceto no `rotulo`.
