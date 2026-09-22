@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gio — Aulas de francês</title>
+<meta name="description" content="Aulas de francês com quem ainda está aprendendo junto com você. Sem pressão, sem medo de errar. On apprend ensemble.">
+
+<!-- VERSÃO DE REVISÃO: a página ainda tem conteúdo provisório e o painel de
+     revisão. Esta linha impede que o Google indexe isso com o nome dela.
+     APAGAR quando o conteúdo real entrar e a página for pro ar de verdade. -->
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&amp;family=Figtree:ital,wght@0,400..800;1,400..700&amp;family=Fredoka:wght@400..700&amp;display=swap">
+<link rel="stylesheet" href="ensemble-design-system/css/tokens.css">
+<link rel="stylesheet" href="ensemble-design-system/css/ensemble.css">
+<link rel="stylesheet" href="css/pagina.css">
+
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ══════════════════ Barra de topo ══════════════════ -->
+<header class="topo" id="topo">
+  <a class="topo__marca" href="#topo">Gio</a>
+  <nav class="topo__nav" aria-label="Seções da página">
+    <a href="#historia">Minha história</a>
+    <a href="#aulas">As aulas</a>
+    <a href="#modalidades">Formatos</a>
+    <a href="#depoimentos">Alunos</a>
+    <a href="#faq">Dúvidas</a>
+  </nav>
+  <a class="en-btn en-btn--pequeno en-btn--contorno topo__acao" href="#contato" data-wa>Marcar conversa</a>
+</header>
+
+<main>
+
+<!-- ══════════════════ 1. HERO ══════════════════ -->
+<section class="secao hero" aria-labelledby="hero-titulo">
+  <div class="caixa">
+
+    <!-- ─── Hero versão A: recorte sobre forma orgânica ─── -->
+    <div class="hero-versao is-ativa" id="hero-a">
+      <div class="hero__grade">
+        <div class="hero__texto">
+          <p class="en-rotulo" data-anima>Professora de francês</p>
+
+          <h1 class="en-display" id="hero-titulo" data-anima style="--atraso:1">
+            A gente aprende
+            <span class="sublinha">junto<svg class="rabisco" viewBox="0 0 200 16" fill="none" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 10c14-8 26 4 42-2s30-4 46 1 32 5 48-2 34-4 58 1" stroke="#ef4135" stroke-width="3.5" vector-effect="non-scaling-stroke"/></svg></span>.
+          </h1>
+
+          <p class="en-lead" data-anima style="--atraso:2">
+            E isso não é frase bonita: eu ainda estou estudando francês. Por isso eu lembro
+            exatamente onde trava — e sei como sair de lá.
+          </p>
+
+          <p class="en-texto" data-anima style="--atraso:3; color:var(--encre-douce)">
+            Aula por vídeo chamada, cara a cara comigo. No seu ritmo, sem medo de errar
+            na frente de ninguém.
+          </p>
+
+          <div class="hero__acoes" data-anima style="--atraso:4">
+            <a class="en-btn en-btn--primario en-btn--grande en-btn--bloco" href="#contato" data-wa>
+              Quero começar
+              <svg class="en-icone en-btn__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+            </a>
+            <a class="en-link en-link--seta" href="#aulas">Ver como funciona
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <div class="hero__selos" data-anima style="--atraso:5">
+            <span class="en-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/><path d="m16.5 11 4-2.6a.8.8 0 0 1 1.2.7v5.8a.8.8 0 0 1-1.2.7l-4-2.6V11Z"/></svg>
+              Por vídeo chamada
+            </span>
+            <span class="en-tag en-tag--ponto">Cara a cara, ao vivo</span>
+            <span class="en-tag en-tag--beurre">Do zero ao avançado</span>
+          </div>
+        </div>
+
+        <div class="hero__foto">
+          <div class="retrato" data-anima="pop" style="--atraso:2">
+            <div class="retrato__forma" data-parallax data-p="-0.05"></div>
+            <div class="retrato__forma retrato__forma--beurre" data-parallax data-p="0.04"></div>
+            <picture>
+              <source srcset="img/gio-recorte.webp" type="image/webp">
+              <img class="retrato__img" src="img/gio-recorte.png" width="880" height="680"
+                   alt="Gio, professora de francês, sorrindo." fetchpriority="high">
+            </picture>
+
+            <!-- A boina cai do céu conforme a pessoa rola a página.
+                 Posição medida no recorte: cabeça centrada em 46% da largura. -->
+            <div class="boina" aria-hidden="true">
+              <div class="boina__peca">
+                <svg class="boina__svg" viewBox="0 0 120 62" fill="none">
+                  <path d="M34 40c0-2 2-3 5-3h42c3 0 5 1 5 3v8c0 5-11 9-26 9s-26-4-26-9v-8Z"
+                        fill="#a92119" stroke="#1b2545" stroke-width="3.2" stroke-linejoin="round"/>
+                  <path d="M60 8c28 0 52 9 52 21 0 8-20 15-52 15S8 37 8 29C8 17 32 8 60 8Z"
+                        fill="#ef4135" stroke="#1b2545" stroke-width="3.2" stroke-linejoin="round"/>
+                  <path d="M60 8c0-4 2-6 6-7" stroke="#1b2545" stroke-width="3.2" stroke-linecap="round"/>
+                  <path d="M26 21c5-4 13-7 21-8" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" opacity=".45"/>
+                </svg>
+              </div>
+            </div>
+
+            <span class="chip-chamada retrato__chamada" aria-hidden="true">
+              <span class="chip-chamada__ponto"></span>
+              em chamada
+            </span>
+
+            <span class="en-adesivo en-adesivo--rouge retrato__adesivo retrato__adesivo--alto flutua" style="--rot:-4deg">Bonjour!</span>
+            <span class="en-adesivo en-adesivo--blanc retrato__adesivo retrato__adesivo--baixo flutua" style="--rot:3deg; --atraso-f:1.2s">Zéro stress</span>
+          </div>
+
+          <div class="hero__baloes" aria-hidden="true">
+            <div class="balao-solto hero__balao--um flutua" style="--atraso-f:.4s" data-anima="lado" data-parallax data-p="0.07">
+              <p class="en-bulle en-bulle--ciel en-bulle--sem-ponta">Bonjour! Tudo bem por aí?</p>
+            </div>
+            <div class="balao-solto hero__balao--dois flutua" style="--atraso-f:1.8s" data-anima="lado-dir" data-parallax data-p="-0.06">
+              <p class="en-bulle en-bulle--rose en-bulle--sem-ponta">Je m'appelle… hum… deixa eu pensar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Hero versão B: polaroid ─── -->
+    <div class="hero-versao" id="hero-b">
+      <div class="hero__grade">
+        <div class="hero__texto">
+          <p class="en-rotulo" data-anima>Professora de francês</p>
+          <h1 class="en-display" data-anima style="--atraso:1">
+            A gente aprende
+            <span class="sublinha">junto<svg class="rabisco" viewBox="0 0 200 16" fill="none" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 10c14-8 26 4 42-2s30-4 46 1 32 5 48-2 34-4 58 1" stroke="#ef4135" stroke-width="3.5" vector-effect="non-scaling-stroke"/></svg></span>.
+          </h1>
+          <p class="en-lead" data-anima style="--atraso:2">
+            E isso não é frase bonita: eu ainda estou estudando francês. Por isso eu lembro
+            exatamente onde trava — e sei como sair de lá.
+          </p>
+          <div class="hero__acoes" data-anima style="--atraso:4">
+            <a class="en-btn en-btn--primario en-btn--grande en-btn--bloco" href="#contato" data-wa>
+              Quero começar
+              <svg class="en-icone en-btn__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+            </a>
+            <a class="en-link en-link--seta" href="#aulas">Ver como funciona
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <div class="hero__selos" data-anima style="--atraso:5">
+            <span class="en-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/><path d="m16.5 11 4-2.6a.8.8 0 0 1 1.2.7v5.8a.8.8 0 0 1-1.2.7l-4-2.6V11Z"/></svg>
+              Por vídeo chamada
+            </span>
+            <span class="en-tag en-tag--ponto">Cara a cara, ao vivo</span>
+            <span class="en-tag en-tag--beurre">Do zero ao avançado</span>
+          </div>
+        </div>
+
+        <div class="hero__foto">
+          <div class="retrato-polaroid" data-anima="pop" style="--atraso:2">
+            <figure class="en-foto">
+              <span class="en-fita" aria-hidden="true"></span>
+              <picture>
+                <source srcset="img/gio-retrato.webp" type="image/webp">
+                <img src="img/gio-retrato.jpg" width="760" height="950" alt="Gio, professora de francês, sorrindo.">
+              </picture>
+              <figcaption class="en-foto__legenda">c'est moi!</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ 2. APRESENTAÇÃO ══════════════════ -->
+<section class="secao secao--alt" id="sobre" aria-labelledby="sobre-titulo">
+  <div class="caixa">
+    <div class="duas-colunas">
+      <div class="pilha">
+        <p class="en-rotulo" data-anima>Quem sou eu</p>
+        <h2 class="en-h1" id="sobre-titulo" data-anima style="--atraso:1">Oi! Eu também ainda estou aprendendo</h2>
+
+        <p class="en-texto" data-anima style="--atraso:2">
+          Eu sou a <span data-pendente>Gio, tenho [idade] anos e moro em [cidade]</span>. Eu não sou aquela
+          professora que cresceu falando francês em casa. Eu comecei do zero, como você, e ainda estou
+          <span data-pendente>me formando em [curso/faculdade]</span>.
+        </p>
+
+        <p class="en-texto" data-anima style="--atraso:3">
+          Pode parecer estranho escolher uma professora que ainda estuda. Eu acho que é o contrário:
+          é justamente por isso que eu lembro de cada parte difícil. O <em>subjonctif</em> que não entra na
+          cabeça, a palavra que some na hora de falar, a vergonha de errar a pronúncia. Eu passei
+          por tudo isso <span data-pendente>[há pouco tempo / ano passado]</span> — e ainda passo.
+        </p>
+
+        <p class="en-texto" data-anima style="--atraso:4">
+          Hoje eu dou aula <span data-pendente>há [X] anos</span>, e o que eu mais ouço dos alunos é:
+          "com você eu não tenho medo de falar errado". É exatamente essa a ideia.
+        </p>
+
+        <figure class="en-citacao" data-anima style="--atraso:5">
+          <blockquote class="en-citacao__texto">Eu não sou a pessoa que já chegou. Eu sou a que está no caminho com você — só uns passos à frente.</blockquote>
+          <figcaption class="en-citacao__autor">Gio</figcaption>
+        </figure>
+      </div>
+
+      <div class="pilha" data-anima="lado-dir" style="--atraso:2">
+        <div class="en-foto en-foto--dir bloco-pendente" style="width:100%">
+          <span class="en-fita en-fita--ciel" aria-hidden="true"></span>
+          <div style="aspect-ratio:4/5; background:var(--papier-fonce); border-radius:3px; display:grid; place-items:center; text-align:center; padding:var(--espaco-4)">
+            <p class="en-pequeno">Foto 2 — a Gio dando aula,<br>estudando ou em viagem.<br><strong>Falta enviar.</strong></p>
+          </div>
+          <figcaption class="en-foto__legenda">meu canto de estudo</figcaption>
+        </div>
+
+        <div class="en-dica en-dica--info">
+          <p class="en-dica__rotulo">
+            <svg class="en-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/></svg>
+            Experiência com o francês
+          </p>
+          <p data-pendente>[Anos estudando francês, nível atual (ex.: B2/C1), experiências de imersão, intercâmbio, viagens, contato diário com o idioma.]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 3. HISTÓRIA COM O FRANCÊS ══════════════════ -->
+<section class="secao" id="historia" aria-labelledby="historia-titulo">
+  <div class="caixa caixa--estreita">
+    <div class="cabeca-secao cabeca-secao--centro">
+      <p class="en-rotulo" data-anima>Como tudo começou</p>
+      <h2 class="en-h1" id="historia-titulo" data-anima style="--atraso:1">Minha história com o francês</h2>
+      <p class="en-lead" data-anima style="--atraso:2">Spoiler: começou torto, como a de todo mundo.</p>
+    </div>
+
+    <div class="en-fundo-caderno caderno bloco-pendente" data-anima="pop">
+      <div class="caderno__linha">
+        <p class="caderno__ano" data-pendente>[ano] — o começo</p>
+        <p class="en-texto" data-pendente>[Como você começou a estudar francês: o que te levou até o idioma — uma música, um filme, a escola, uma viagem, alguém da família.]</p>
+      </div>
+
+      <div class="caderno__linha">
+        <p class="caderno__ano" data-pendente>[ano] — a trajetória</p>
+        <p class="en-texto" data-pendente>[Como foi o caminho: onde estudou, o que travou, quanto tempo levou, o momento em que destravou.]</p>
+      </div>
+
+      <div class="caderno__linha">
+        <p class="caderno__ano" data-pendente>[ano] — a formação</p>
+        <p class="en-texto" data-pendente>[Cursos, faculdade, certificações, intercâmbio, professores que fizeram diferença.]</p>
+      </div>
+
+      <div class="caderno__linha">
+        <p class="caderno__ano" data-pendente>[ano] — a primeira aula</p>
+        <p class="en-texto" data-pendente>[Como você começou a dar aulas: foi por acaso? Alguém pediu ajuda? Como foi a primeira aula?]</p>
+      </div>
+
+      <div class="caderno__linha">
+        <p class="caderno__ano">hoje</p>
+        <p class="en-texto" data-pendente>[Sua relação atual com o idioma: o que ainda estuda, o que ainda acha difícil, o que mais gosta.]</p>
+        <p class="en-nota en-nota--rouge" style="margin-top:8px">e ainda estudando!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 4. EXPERIÊNCIA EM NÚMEROS ══════════════════ -->
+<section class="secao secao--alt" id="numeros" aria-labelledby="numeros-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao cabeca-secao--centro">
+      <p class="en-rotulo" data-anima>Até aqui</p>
+      <h2 class="en-h1" id="numeros-titulo" data-anima style="--atraso:1">Experiência em números</h2>
+    </div>
+
+    <div class="numeros bloco-pendente">
+      <div class="en-card en-card--numero" data-anima="pop">
+        <span class="en-numero" data-numero="0" data-pendente>0</span>
+        <p class="en-card__rotulo">anos dando aula</p>
+      </div>
+      <div class="en-card en-card--numero en-card--ciel" data-anima="pop" style="--atraso:1">
+        <span class="en-numero" data-numero="0" data-pendente>0</span>
+        <p class="en-card__rotulo">alunos já atendidos</p>
+      </div>
+      <div class="en-card en-card--numero en-card--beurre" data-anima="pop" style="--atraso:2">
+        <span class="en-numero" data-numero="0" data-pendente>0</span>
+        <p class="en-card__rotulo">aulas dadas</p>
+      </div>
+      <div class="en-card en-card--numero en-card--carimbo" data-anima="pop" style="--atraso:3">
+        <span class="en-numero" data-numero="0" data-pendente>0</span>
+        <p class="en-card__rotulo">alunos agora</p>
+        <p class="en-nota">e tem vaga pra você</p>
+      </div>
+    </div>
+
+    <p class="en-pequeno" style="text-align:center; margin-top:var(--espaco-5)">
+      Números aproximados e reais — nada de inflar. Me manda os seus que eu preencho.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════ 5. COMO FUNCIONAM AS AULAS ══════════════════ -->
+<section class="secao" id="aulas" aria-labelledby="aulas-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao">
+      <p class="en-rotulo" data-anima>Na prática</p>
+      <h2 class="en-h1" id="aulas-titulo" data-anima style="--atraso:1">Como funcionam as aulas</h2>
+      <p class="en-lead" data-anima style="--atraso:2">
+        A gente abre a vídeo chamada e conversa. Eu te vejo, você me vê, e a gramática
+        entra no meio da conversa — sem apostila decorada e sem aquele silêncio constrangedor.
+      </p>
+    </div>
+
+    <div class="conversa-bloco">
+      <!-- A cena: mensagens entram uma a uma -->
+      <div class="chamada conversa-anima" data-anima="pop" aria-label="Exemplo de como é uma aula por vídeo chamada">
+        <div class="chamada__barra">
+          <span class="chip-chamada chip-chamada--escuro" aria-hidden="true">
+            <span class="chip-chamada__ponto"></span>
+            em chamada
+          </span>
+          <span class="chamada__tempo" aria-hidden="true">23:41</span>
+        </div>
+
+        <div class="chamada__palco">
+          <div class="chamada__tela">
+            <picture>
+              <source srcset="img/gio-recorte.webp" type="image/webp">
+              <img src="img/gio-recorte.png" alt="" loading="lazy">
+            </picture>
+            <span class="chamada__etiqueta">Gio</span>
+          </div>
+
+          <div class="chamada__mini">
+            <svg class="en-icone en-icone--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 14c.8 1.3 2.1 2 3.5 2s2.7-.7 3.5-2M9 9.5v1M15 9.5v1"/></svg>
+            <span class="chamada__etiqueta">você</span>
+          </div>
+        </div>
+
+        <div class="en-dialogo">
+          <p class="en-msg en-msg--ela"><span class="en-msg__quem">Gio</span>Bonjour! Comment ça va?</p>
+          <p class="en-msg en-msg--voce"><span class="en-msg__quem">você</span>Ça va! …eu acho?</p>
+          <p class="en-msg en-msg--ela">Resposta perfeita. Até eu fico em dúvida às vezes, viu?</p>
+          <p class="en-msg en-msg--voce">posso falar errado mesmo?</p>
+          <p class="en-msg en-msg--ela">Pode e deve. C'est comme ça qu'on apprend!</p>
+          <p class="en-msg en-msg--ela">Bora começar pelo que você quer dizer hoje.</p>
+        </div>
+
+        <div class="chamada__controles" aria-hidden="true">
+          <span class="chamada__botao">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/></svg>
+          </span>
+          <span class="chamada__botao">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6.5h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/><path d="m16.5 11 4-2.6a.8.8 0 0 1 1.2.7v5.8a.8.8 0 0 1-1.2.7l-4-2.6V11Z"/></svg>
+          </span>
+          <span class="chamada__botao chamada__botao--desligar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5 9 8l-2.2 1.7a12.5 12.5 0 0 0 5.5 5.5L14 13l4.5 2.5-1.2 3.2a2 2 0 0 1-2.2 1.3C8.7 19 5 15.3 3.5 9a2 2 0 0 1 1.3-2.2l1.7-.6Z"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="pilha">
+        <div class="en-card en-card--info" data-anima="lado-dir">
+          <span class="en-icone-circulo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h14a2 2 0 0 1 2 2V15a2 2 0 0 1-2 2h-8l-4.5 3.5V17H5a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2Z"/><path d="M8 10.8h.01M12 10.8h.01M16 10.8h.01"/></svg>
+          </span>
+          <h3 class="en-card__titulo">Você fala desde a primeira aula</h3>
+          <p class="en-card__texto">Nada de esperar "estar pronto". A gente começa falando com o que você já tem, por menos que pareça.</p>
+        </div>
+
+        <div class="en-card en-card--info" data-anima="lado-dir" style="--atraso:1">
+          <span class="en-icone-circulo en-icone-circulo--rose" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M3.5 7.5h3M3.5 12h3M3.5 16.5h3"/><path d="M10 8h5.5M10 11.5h4"/></svg>
+          </span>
+          <h3 class="en-card__titulo">O conteúdo sai de você</h3>
+          <p class="en-card__texto">Eu anoto o que você quer dizer e não conseguiu. A próxima aula nasce dali — não de um capítulo qualquer.</p>
+        </div>
+
+        <div class="en-card en-card--info" data-anima="lado-dir" style="--atraso:2">
+          <span class="en-icone-circulo en-icone-circulo--beurre" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 3 5v13.5c4-.5 7 0 9 1.5 2-1.5 5-2 9-1.5V5c-4-.5-7 0-9 1.5Z"/><path d="M12 6.5V20"/></svg>
+          </span>
+          <h3 class="en-card__titulo">Acompanhamento entre as aulas</h3>
+          <p class="en-card__texto" data-pendente>[Como funciona o acompanhamento: material enviado, correções, áudios, grupo, tira-dúvidas no WhatsApp?]</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="en-linha" style="margin-top:var(--espaco-7); align-items:flex-start; gap:var(--espaco-5)">
+      <div class="en-dica" data-anima>
+        <span class="en-fita" aria-hidden="true"></span>
+        <p class="en-dica__rotulo">
+          <svg class="en-icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Frequência e duração
+        </p>
+        <p data-pendente>[Quantas vezes por semana, quanto tempo cada aula, se dá pra mudar de horário, como funciona remarcação.]</p>
+      </div>
+
+      <div class="en-dica en-dica--erro" data-anima style="--atraso:1">
+        <p class="en-dica__rotulo">
+          <svg class="en-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17.5C3 12 7 6 12 6s9 6 8.5 11.5C18.5 15.2 15.5 14 12 14s-6.5 1.2-8.5 3.5Z"/><path d="M9 6.8c.6 2.2.8 4.7.6 7.5M15 6.8c-.6 2.2-.8 4.7-.6 7.5"/></svg>
+          Erro que eu também já cometi
+        </p>
+        <p>Dizer <span class="en-risco">je suis 25 ans</span> em vez de <span class="en-certo">j'ai 25 ans</span>. Em francês a idade a gente <em>tem</em>, não <em>é</em>. Eu errei isso por meses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 6. PARA QUEM SÃO AS AULAS ══════════════════ -->
+<section class="secao secao--alt" id="para-quem" aria-labelledby="para-quem-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao">
+      <p class="en-rotulo" data-anima>Serve pra você?</p>
+      <h2 class="en-h1" id="para-quem-titulo" data-anima style="--atraso:1">Para quem são as aulas</h2>
+    </div>
+
+    <div class="duas-colunas">
+      <div class="en-card en-card--ciel" data-anima="lado">
+        <span class="en-icone-circulo" style="background:var(--blanc)" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/></svg>
+        </span>
+        <h3 class="en-card__titulo" style="margin-top:var(--espaco-4)">Você está começando do zero</h3>
+        <p class="en-card__texto" style="color:var(--encre)">
+          Nunca estudou francês e acha que é tarde, difícil ou "não é pra você". Não é nada disso —
+          é só um começo diferente do que te venderam.
+        </p>
+        <ul class="en-lista-check" style="margin-top:var(--espaco-4)">
+          <li>Nunca abriu um livro de francês</li>
+          <li>Tentou app sozinho e desistiu</li>
+          <li>Tem medo de não ter "dom pra idioma"</li>
+        </ul>
+      </div>
+
+      <div class="en-card en-card--rose" data-anima="lado-dir" style="--atraso:1">
+        <span class="en-icone-circulo en-icone-circulo--rose" style="background:var(--blanc)" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h14a2 2 0 0 1 2 2V15a2 2 0 0 1-2 2h-8l-4.5 3.5V17H5a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2Z"/><path d="M8 10.8h.01M12 10.8h.01M16 10.8h.01"/></svg>
+        </span>
+        <h3 class="en-card__titulo" style="margin-top:var(--espaco-4)">Você já estuda e travou</h3>
+        <p class="en-card__texto" style="color:var(--encre)">
+          Entende quando lê, entende quando ouve, mas na hora de falar some tudo. Esse é o
+          travamento mais comum que existe — e ele tem saída.
+        </p>
+        <ul class="en-lista-check" style="margin-top:var(--espaco-4)">
+          <li>Lê bem, mas congela pra falar</li>
+          <li>Estudou em curso e parou no meio</li>
+          <li>Precisa destravar pra prova, trabalho ou viagem</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pilha" style="margin-top:var(--espaco-7); max-width:760px">
+      <div class="en-linha" style="gap:var(--espaco-5); align-items:center">
+        <img class="en-ilustracao" src="ensemble-design-system/assets/ilustracoes/balao-travei.svg" alt="" data-anima="pop">
+        <div class="pilha pilha--curta" style="flex:1; min-width:240px">
+          <h3 class="en-h3" data-anima>Níveis e objetivos que eu atendo</h3>
+          <ul class="lista-objetivos" data-anima style="--atraso:1">
+            <li><span class="en-tag">A1 — do zero</span></li>
+            <li><span class="en-tag">A2 — básico</span></li>
+            <li><span class="en-tag">B1 — me viro</span></li>
+            <li><span class="en-tag" data-pendente>B2+ [confirmar até qual nível]</span></li>
+            <li><span class="en-tag en-tag--beurre">Conversação</span></li>
+            <li><span class="en-tag en-tag--beurre">Viagem</span></li>
+            <li><span class="en-tag en-tag--beurre">Trabalho</span></li>
+            <li><span class="en-tag en-tag--beurre" data-pendente>[DELF / DALF?]</span></li>
+            <li><span class="en-tag en-tag--beurre" data-pendente>[Intercâmbio / cidadania?]</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 7. MODALIDADES ══════════════════ -->
+<section class="secao" id="modalidades" aria-labelledby="modalidades-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao">
+      <p class="en-rotulo" data-anima>Do seu jeito</p>
+      <h2 class="en-h1" id="modalidades-titulo" data-anima style="--atraso:1">Modalidades de aula</h2>
+      <p class="en-lead" data-anima style="--atraso:2">
+        Duas formas de estudar comigo — as duas por vídeo chamada, cara a cara.
+        A gente escolhe junto na primeira conversa.
+      </p>
+    </div>
+
+    <div class="grade-formatos bloco-pendente">
+      <!-- Individual (destaque) -->
+      <div class="en-card en-card--formato en-card--carimbo" data-anima="pop">
+        <span class="en-adesivo en-adesivo--rouge">Coup de cœur</span>
+        <span class="en-tag en-tag--rouge">Uma a uma</span>
+        <h3 class="en-card__titulo">Aula individual</h3>
+        <p class="en-card__texto">Só você e eu. O ritmo, o assunto e o horário são seus.</p>
+        <ul class="en-lista-check">
+          <li>Plano montado pro seu objetivo</li>
+          <li>Você fala a aula inteira</li>
+          <li data-pendente>[terceiro benefício]</li>
+        </ul>
+        <p class="en-card__meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-pendente>[duração]</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-pendente>[frequência]</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/><path d="m16.5 11 4-2.6a.8.8 0 0 1 1.2.7v5.8a.8.8 0 0 1-1.2.7l-4-2.6V11Z"/></svg>Por vídeo chamada</span>
+        </p>
+        <a class="en-btn en-btn--primario en-btn--bloco" href="#contato" data-wa>Quero essa</a>
+      </div>
+
+      <!-- Em grupo -->
+      <div class="en-card en-card--formato" data-anima="pop" style="--atraso:1">
+        <span class="en-tag">Em grupo</span>
+        <h3 class="en-card__titulo">Aula em grupo</h3>
+        <p class="en-card__texto">Turma pequena, mais barato e com gente pra conversar junto.</p>
+        <ul class="en-lista-check">
+          <li data-pendente>[quantas pessoas por turma]</li>
+          <li>Conversa com outros alunos</li>
+          <li data-pendente>[terceiro benefício]</li>
+        </ul>
+        <p class="en-card__meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-pendente>[duração]</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.6 2.5-6 5.5-6s5.5 2.4 5.5 6"/><circle cx="16.5" cy="8.5" r="2.5"/><path d="M16 14c2.8 0 4.5 2.2 4.5 5.5"/></svg><span data-pendente>[tamanho]</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/><path d="m16.5 11 4-2.6a.8.8 0 0 1 1.2.7v5.8a.8.8 0 0 1-1.2.7l-4-2.6V11Z"/></svg>Por vídeo chamada</span>
+        </p>
+        <a class="en-btn en-btn--contorno en-btn--bloco" href="#contato" data-wa>Quero essa</a>
+      </div>
+    </div>
+
+    <!-- Aula experimental -->
+    <div class="en-destaque en-destaque--ciel bloco-pendente" data-anima style="margin-top:var(--espaco-7)">
+      <span class="en-destaque__forma" aria-hidden="true"></span>
+      <p class="en-nota">sem compromisso, prometo</p>
+      <h3 class="en-destaque__titulo">Antes de decidir, a gente conversa</h3>
+      <p class="en-destaque__texto" data-pendente>
+        [Existe aula experimental? É gratuita ou paga? Quanto dura? O que acontece nela? Se não existir, trocamos este bloco por uma conversa de 15 min pelo WhatsApp.]
+      </p>
+      <div class="en-destaque__acoes">
+        <a class="en-btn en-btn--secundario" href="#contato" data-wa>Tirar uma dúvida antes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 8. DIFERENCIAIS ══════════════════ -->
+<section class="secao secao--alt" id="diferenciais" aria-labelledby="diferenciais-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao">
+      <p class="en-rotulo" data-anima>Por que comigo</p>
+      <h2 class="en-h1" id="diferenciais-titulo" data-anima style="--atraso:1">O que muda nas minhas aulas</h2>
+    </div>
+
+    <div class="en-grade">
+      <div class="en-card en-card--info" data-anima="pop">
+        <span class="en-icone-circulo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8.5-5-8.5-11c0-2.8 2.1-4.5 4.5-4.5 1.8 0 3.2 1 4 2.5.8-1.5 2.2-2.5 4-2.5 2.4 0 4.5 1.7 4.5 4.5 0 6-8.5 11-8.5 11Z"/></svg>
+        </span>
+        <h3 class="en-card__titulo">Eu ainda sou aluna</h3>
+        <p class="en-card__texto">Meu maior diferencial é justamente esse. Eu não esqueci como é não entender — porque ainda acontece comigo.</p>
+      </div>
+
+      <div class="en-card en-card--info" data-anima="pop" style="--atraso:1">
+        <span class="en-icone-circulo en-icone-circulo--rose" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14c.8 1.3 2.1 2 3.5 2s2.7-.7 3.5-2M9 9.5v1M15 9.5v1"/></svg>
+        </span>
+        <h3 class="en-card__titulo">Errar é o combinado</h3>
+        <p class="en-card__texto">Ninguém é corrigido no meio da frase. Eu anoto, você termina a ideia, e a gente volta depois — rindo.</p>
+      </div>
+
+      <div class="en-card en-card--info" data-anima="pop" style="--atraso:2">
+        <span class="en-icone-circulo en-icone-circulo--beurre" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 20 1-4.5L15.6 4.9a2 2 0 0 1 2.8 0l.7.7a2 2 0 0 1 0 2.8L8.5 19 4 20Z"/><path d="m13.6 6.9 3.5 3.5M5 15.5 8.5 19"/></svg>
+        </span>
+        <h3 class="en-card__titulo">Aula feita pra você</h3>
+        <p class="en-card__texto">Não existe turma padrão na individual. O plano muda conforme o que você precisa dizer na vida real.</p>
+      </div>
+
+      <div class="en-card en-card--info" data-anima="pop" style="--atraso:3">
+        <span class="en-icone-circulo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5V5M10.4 5h3.2"/><path d="M10.8 5c-.2 5.2-2 10.6-5.6 16M13.2 5c.2 5.2 2 10.6 5.6 16"/><path d="M9.6 11h4.8M7.8 15.5h8.4"/><path d="M9.2 21c0-2.3 1.2-3.8 2.8-3.8s2.8 1.5 2.8 3.8"/><path d="M4 21h2.8M17.2 21H20"/></svg>
+        </span>
+        <h3 class="en-card__titulo">Experiência profissional</h3>
+        <p class="en-card__texto" data-pendente>[Escolas, cursos de idioma, empresas, aulas particulares — onde já deu aula e por quanto tempo.]</p>
+      </div>
+    </div>
+
+    <div class="en-destaque en-destaque--beurre" data-anima style="margin-top:var(--espaco-7)">
+      <span class="en-destaque__forma" aria-hidden="true"></span>
+      <p class="en-nota">olha isso!</p>
+      <h3 class="en-destaque__titulo">Nenhuma aula minha tem julgamento</h3>
+      <p class="en-destaque__texto">
+        Você pode falar errado, esquecer palavra, misturar com inglês e dar risada no meio.
+        Isso não atrapalha a aula — isso <em>é</em> a aula.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 9. DEPOIMENTOS ══════════════════ -->
+<section class="secao" id="depoimentos" aria-labelledby="depoimentos-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao cabeca-secao--centro">
+      <p class="en-rotulo" data-anima>Quem já destravou</p>
+      <h2 class="en-h1" id="depoimentos-titulo" data-anima style="--atraso:1">O que os alunos contam</h2>
+      <p class="en-lead" data-anima style="--atraso:2">Só depoimento real e autorizado entra aqui.</p>
+    </div>
+
+    <div class="grade-depoimentos bloco-pendente">
+      <figure class="en-card en-card--depoimento" data-anima="pop">
+        <p class="en-card__citacao" data-pendente>[Depoimento real do aluno — até 40 palavras, com as palavras dele mesmo.]</p>
+        <figcaption class="en-autor">
+          <span class="en-avatar" aria-hidden="true">?</span>
+          <span>
+            <span class="en-autor__nome" data-pendente>[Nome + inicial]</span>
+            <span class="en-autor__info" data-pendente>[nível ou tempo de aula]</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="en-card en-card--depoimento en-card--carimbo" data-anima="pop" style="--atraso:1">
+        <p class="en-card__citacao" data-pendente>[Depoimento de destaque — o mais forte dos três.]</p>
+        <figcaption class="en-autor">
+          <span class="en-avatar en-avatar--rose" aria-hidden="true">?</span>
+          <span>
+            <span class="en-autor__nome" data-pendente>[Nome + inicial]</span>
+            <span class="en-autor__info" data-pendente>[nível ou tempo de aula]</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="en-depoimento-balao" data-anima="pop" style="--atraso:2">
+        <p class="en-bulle en-bulle--ciel" data-pendente>[Depoimento em formato de balão — bom pra uma frase curta e marcante.]</p>
+        <div class="en-autor">
+          <span class="en-avatar en-avatar--beurre" aria-hidden="true">?</span>
+          <span>
+            <span class="en-autor__nome" data-pendente>[Nome + inicial]</span>
+            <span class="en-autor__info" data-pendente>[nível ou tempo de aula]</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pilha" style="margin-top:var(--espaco-7)">
+      <h3 class="en-h3" data-anima>Prints das mensagens</h3>
+      <p class="en-texto" data-anima style="--atraso:1" >Se tiver conversa de aluno autorizada, ela entra aqui como imagem — é o que mais convence.</p>
+      <div class="prints bloco-pendente" data-anima style="--atraso:2">
+        <div class="print-vazio"><p class="en-pequeno">Print 1<br><strong>falta enviar</strong></p></div>
+        <div class="print-vazio"><p class="en-pequeno">Print 2<br><strong>falta enviar</strong></p></div>
+        <div class="print-vazio"><p class="en-pequeno">Print 3<br><strong>falta enviar</strong></p></div>
+      </div>
+      <p class="en-pequeno">Lembrete: peça autorização por escrito antes de publicar print, nome ou foto de aluno.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 10. FORMAÇÃO E QUALIFICAÇÕES ══════════════════ -->
+<section class="secao secao--alt" id="formacao" aria-labelledby="formacao-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao">
+      <p class="en-rotulo" data-anima>No papel</p>
+      <h2 class="en-h1" id="formacao-titulo" data-anima style="--atraso:1">Formação e qualificações</h2>
+      <p class="en-lead" data-anima style="--atraso:2">Eu estou em formação — e faço questão de dizer isso na cara limpa.</p>
+    </div>
+
+    <div class="formacao bloco-pendente">
+      <div class="en-card en-card--carimbo" data-anima="lado">
+        <ul class="en-lista-check">
+          <li data-pendente>[Faculdade — curso, instituição, período, se está em andamento]</li>
+          <li data-pendente>[Formação acadêmica complementar]</li>
+          <li data-pendente>[Certificações — DELF, DALF, TCF, TEF: qual e qual nota]</li>
+          <li data-pendente>[Nível de proficiência atual]</li>
+          <li data-pendente>[Cursos livres realizados]</li>
+          <li data-pendente>[Experiência em escolas ou cursos de idiomas]</li>
+          <li data-pendente>[Outras qualificações relevantes]</li>
+        </ul>
+      </div>
+
+      <div class="pilha" data-anima="lado-dir" style="--atraso:1">
+        <div class="en-dica en-dica--info">
+          <p class="en-dica__rotulo">
+            <svg class="en-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.6C3 9.4 7 7.2 12 7.2s9 2 9 5c0 2-3.6 3.3-9 3.3s-9-.9-9-2.9Z"/><path d="M12 7.2c0-1.3.6-2.2 1.8-2.4"/><path d="M5.6 15c.6 1.6 3 2.6 6.4 2.6s5.8-1 6.4-2.6"/></svg>
+            Sobre ainda estar me formando
+          </p>
+          <p>
+            Eu podia esconder isso. Prefiro não. Estar em formação significa que eu estudo
+            todo dia, que eu uso os mesmos métodos que passo pra você, e que eu testo tudo
+            em mim antes de levar pra aula.
+          </p>
+        </div>
+
+        <div class="en-linha">
+          <span class="en-tag en-tag--contorno" data-pendente>[nível atual]</span>
+          <span class="en-tag en-tag--contorno" data-pendente>[certificação]</span>
+          <span class="en-tag en-tag--contorno" data-pendente>[anos de estudo]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 11. FAQ ══════════════════ -->
+<section class="secao" id="faq" aria-labelledby="faq-titulo">
+  <div class="caixa">
+    <div class="cabeca-secao cabeca-secao--centro">
+      <p class="en-rotulo" data-anima>Antes de me chamar</p>
+      <h2 class="en-h1" id="faq-titulo" data-anima style="--atraso:1">Dúvidas que sempre aparecem</h2>
+    </div>
+
+    <div class="faq">
+      <details class="faq__item" data-anima>
+        <summary>Preciso saber francês para começar?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto">Não precisa de nada. Dá pra começar sem saber dizer <em>bonjour</em> — e na primeira aula você já vai falar alguma coisa. A aula inteira é pensada pra quem está começando do zero também.</p>
+        </div>
+      </details>
+
+      <details class="faq__item" data-anima style="--atraso:1">
+        <summary>As aulas são online?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto">
+            Todas. A aula acontece por vídeo chamada, ao vivo, eu e você cara a cara —
+            não é aula gravada nem material pra você ver sozinho. De qualquer lugar,
+            só precisa de internet e de vontade de falar.
+          </p>
+          <p class="en-texto" style="margin-top:var(--espaco-3)" data-pendente>[Por qual plataforma: Google Meet, Zoom, outra?]</p>
+        </div>
+      </details>
+
+      <details class="faq__item" data-anima style="--atraso:2">
+        <summary>As aulas são individuais?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto">
+            Tem das duas: individual, só você e eu, e em grupo, numa turma pequena.
+            As duas por vídeo chamada.
+          </p>
+          <p class="en-texto" style="margin-top:var(--espaco-3)" data-pendente>[Diferença de preço e quantas pessoas cabem na turma.]</p>
+        </div>
+      </details>
+
+      <details class="faq__item" data-anima style="--atraso:3">
+        <summary>Quanto tempo dura cada aula?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto" data-pendente>[Duração em minutos e quantas vezes por semana.]</p>
+        </div>
+      </details>
+
+      <details class="faq__item" data-anima style="--atraso:4">
+        <summary>Qual nível de francês posso estudar?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto" data-pendente>[Do A1 até qual nível? Ser honesta aqui: se o limite é B1 ou B2, dizer.]</p>
+        </div>
+      </details>
+
+      <details class="faq__item" data-anima style="--atraso:5">
+        <summary>Existe aula experimental?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto" data-pendente>[Existe? É grátis? Quanto dura? O que acontece nela?]</p>
+        </div>
+      </details>
+
+      <details class="faq__item" data-anima style="--atraso:6">
+        <summary>Como funciona o pagamento?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto" data-pendente>[Avulsa ou pacote? Pix, cartão, transferência? Quando se paga — antes ou depois? Tem desconto por pacote?]</p>
+        </div>
+      </details>
+
+      <details class="faq__item" data-anima style="--atraso:7">
+        <summary>Como faço para começar?
+          <span class="faq__sinal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq__resposta">
+          <p class="en-texto">Me manda uma mensagem no WhatsApp contando por que você quer aprender francês. A gente conversa, vê qual formato encaixa no seu horário e marca a primeira aula. Sem formulário gigante e sem compromisso.</p>
+          <p style="margin-top:var(--espaco-4)"><a class="en-btn en-btn--secundario" href="#contato" data-wa>Mandar mensagem</a></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 12. CTA FINAL ══════════════════ -->
+<section class="secao" id="contato" aria-labelledby="cta-titulo">
+  <div class="caixa">
+    <div class="en-destaque" data-anima>
+      <span class="en-destaque__forma" aria-hidden="true"></span>
+
+      <div class="cta-final">
+        <div class="pilha pilha--curta">
+          <p class="en-nota">sem pressão, prometo</p>
+          <h2 class="en-destaque__titulo" id="cta-titulo">Bora destravar esse francês?</h2>
+          <p class="en-destaque__texto">
+            Me conta em uma mensagem por que você quer aprender francês — viagem, trabalho, uma
+            série, uma pessoa, vale tudo. Eu respondo e a gente combina o resto sem burocracia.
+          </p>
+          <div class="en-destaque__acoes">
+            <a class="en-btn en-btn--primario en-btn--grande" href="#contato" data-wa>
+              <svg class="en-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h14a2 2 0 0 1 2 2V15a2 2 0 0 1-2 2h-8l-4.5 3.5V17H5a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2Z"/><path d="M8 10.8h.01M12 10.8h.01M16 10.8h.01"/></svg>
+              Chamar no WhatsApp
+            </a>
+            <a class="en-link en-link--inverso" href="#aulas">Ver como funciona antes</a>
+          </div>
+          <p class="en-pequeno" style="color:var(--ciel)" data-pendente>[E-mail ou Instagram, se quiser mostrar outro canal.]</p>
+        </div>
+
+        <div class="cta-conversa conversa-anima" aria-hidden="true">
+          <div class="en-dialogo">
+            <p class="en-msg en-msg--voce"><span class="en-msg__quem">você</span>Oi Gio! Vi seu site</p>
+            <p class="en-msg en-msg--voce">quero começar do zero, mas tenho medo de ser ruim nisso</p>
+            <p class="en-msg en-msg--ela"><span class="en-msg__quem">Gio</span>Bonjour! Todo mundo chega assim, juro</p>
+            <p class="en-msg en-msg--ela">Me diz seu horário que eu te mando o link da chamada</p>
+            <p class="en-msg en-msg--ela en-msg--link">
+              <span class="chip-chamada"><span class="chip-chamada__ponto"></span>entrar na chamada</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════ Rodapé ══════════════════ -->
+<footer class="rodape">
+  <div class="caixa">
+    <div class="rodape__grade">
+      <div class="pilha pilha--curta">
+        <p class="rodape__marca">Gio</p>
+        <p class="en-pequeno">Aulas de francês · On apprend ensemble.</p>
+        <p class="en-legenda" data-pendente>[Nome completo, CNPJ/MEI se tiver, cidade.]</p>
+      </div>
+      <div class="rodape__links">
+        <a class="en-link" href="#contato" data-wa>WhatsApp</a>
+        <a class="en-link" href="#" data-pendente>[Instagram]</a>
+        <a class="en-link" href="#" data-pendente>[E-mail]</a>
+      </div>
+    </div>
+    <hr class="en-divisor en-divisor--bandeira" style="margin:var(--espaco-6) auto">
+    <p class="en-legenda" style="text-align:center">À bientôt!</p>
+  </div>
+</footer>
+
+<!-- Botão flutuante de contato -->
+<a class="en-btn en-btn--primario flutuante" href="#contato" data-wa>
+  <svg class="en-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h14a2 2 0 0 1 2 2V15a2 2 0 0 1-2 2h-8l-4.5 3.5V17H5a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2Z"/><path d="M8 10.8h.01M12 10.8h.01M16 10.8h.01"/></svg>
+  WhatsApp
+</a>
+
+<!-- ══════════════════ Painel provisório — REMOVER ANTES DE PUBLICAR ══════════════════ -->
+<aside class="painel" id="painel">
+  <button class="painel__fechar" type="button" id="painel-fechar" aria-label="Fechar painel de revisão">×</button>
+  <button class="painel__titulo" type="button" id="painel-alternar" aria-expanded="true" aria-controls="painel-corpo">
+    Revisão <span class="painel__seta" aria-hidden="true">▾</span>
+  </button>
+  <div class="painel__corpo" id="painel-corpo">
+    <div class="painel__linha">
+      <span>Hero:</span>
+      <button type="button" id="btn-hero-a" aria-pressed="true">A · recorte</button>
+      <button type="button" id="btn-hero-b" aria-pressed="false">B · polaroid</button>
+    </div>
+    <div class="painel__linha">
+      <span>Marcações:</span>
+      <button type="button" id="btn-marcas" aria-pressed="true">ligadas</button>
+    </div>
+    <div class="painel__linha">
+      <span>Movimento:</span>
+      <button type="button" id="btn-movimento" aria-pressed="false">forçar</button>
+    </div>
+    <p class="painel__aviso" id="painel-aviso" hidden>
+      Este navegador está com <strong>movimento reduzido</strong>: as animações
+      estão desligadas de propósito e tudo aparece no estado final. Clique em
+      <strong>forçar</strong> pra ver a boina cair e as mensagens chegarem.
+    </p>
+  </div>
+</aside>
+
+<script src="js/animacoes.js" defer></script>
+</body>
+</html>

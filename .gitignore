@@ -1,0 +1,6 @@
+# Configuração local do app (aponta para caminhos desta máquina)
+.claude/
+
+node_modules/
+.DS_Store
+Thumbs.db

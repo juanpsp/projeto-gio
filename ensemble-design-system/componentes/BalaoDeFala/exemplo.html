@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/ensemble.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balão de fala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&amp;family=Figtree:ital,wght@0,400..800;1,400..700&amp;family=Fredoka:wght@400..700&amp;display=swap">
+<style>.ds{padding:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;box-sizing:border-box}.ds-g{display:grid;gap:14px}.ds-lab{font:600 12px/16px var(--font-texto);letter-spacing:.06em;text-transform:uppercase;color:var(--encre-douce);margin:0}.ds-row{display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center}.ds-col{display:grid;gap:8px;justify-items:start}.ds-sub{font:500 13px/18px var(--font-texto);color:var(--encre-douce);margin:0}.bg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px 24px;align-items:start}
+.dirs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:26px 34px;padding:6px 26px 0;align-items:start}
+.dlg{display:grid;gap:14px;max-width:520px;padding:0 24px}</style>
+</head>
+<body>
+<div class="ds">
+<div class="ds-g"><p class="ds-lab">Formatos</p><div class="bg">
+<div class="ds-col"><p class="ds-sub">fala</p><div class="en-bulle">Bonjour! Tudo bem por aí?</div></div>
+<div class="ds-col"><p class="ds-sub">pensamento</p><div class="en-bulle en-bulle--pensamento en-bulle--ciel">Como era “saudade” em francês mesmo…?</div></div>
+<div class="ds-col"><p class="ds-sub">cochicho</p><div class="en-bulle en-bulle--cochicho">psiu: ninguém nasce sabendo o <i>subjonctif</i></div></div>
+<div class="ds-col"><p class="ds-sub">grande (destaque)</p><div class="en-bulle en-bulle--grande en-bulle--beurre en-bulle--carimbo">Oh là là, você acertou!</div></div>
+<div class="ds-col"><p class="ds-sub">sem ponta</p><div class="en-bulle en-bulle--sem-ponta en-bulle--rose"><span class="en-bulle__titulo">Errou? Ótimo.</span>Agora a gente sabe exatamente o que treinar.</div></div>
+</div></div>
+<div class="ds-g"><p class="ds-lab">Cores</p><div class="ds-row" style="align-items:flex-start">
+<div class="en-bulle">blanc</div><div class="en-bulle en-bulle--ciel">ciel</div><div class="en-bulle en-bulle--rose">rose</div><div class="en-bulle en-bulle--beurre">beurre</div><div class="en-bulle en-bulle--bleu">bleu</div><div class="en-bulle en-bulle--rouge">rouge</div>
+</div></div>
+<div class="ds-g"><p class="ds-lab">Direção da ponta</p><div class="dirs">
+<div class="en-bulle">bas-gauche (padrão)</div>
+<div class="en-bulle en-bulle--bas-droite en-bulle--ciel">bas-droite</div>
+<div class="en-bulle en-bulle--haut-gauche en-bulle--rose">haut-gauche</div>
+<div class="en-bulle en-bulle--haut-droite en-bulle--beurre">haut-droite</div>
+<div class="en-bulle en-bulle--gauche">gauche</div>
+<div class="en-bulle en-bulle--droite en-bulle--ciel">droite</div>
+</div></div>
+<div class="ds-g"><p class="ds-lab">Diálogo com balões</p><div class="dlg">
+<div class="en-bulle en-bulle--ciel en-bulle--gauche">Vamos lá: como você se apresentaria?</div>
+<div class="en-bulle en-bulle--rose en-bulle--droite">Je m'appelle… hum… <i>j'ai oublié</i>?</div>
+<div class="en-bulle en-bulle--ciel en-bulle--gauche">Esqueceu o próprio nome em francês? Clássico. On recommence!<span class="en-bulle__assinatura" style="color:var(--bleu)">— a prof</span></div>
+</div></div>
+</div>
+</body>
+</html>

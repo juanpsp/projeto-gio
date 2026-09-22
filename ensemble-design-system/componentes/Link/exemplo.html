@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/ensemble.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Link</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&amp;family=Figtree:ital,wght@0,400..800;1,400..700&amp;family=Fredoka:wght@400..700&amp;display=swap">
+<style>.ds{padding:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;box-sizing:border-box}.ds-g{display:grid;gap:14px}.ds-lab{font:600 12px/16px var(--font-texto);letter-spacing:.06em;text-transform:uppercase;color:var(--encre-douce);margin:0}.ds-row{display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center}.ds-col{display:grid;gap:8px;justify-items:start}.ds-sub{font:500 13px/18px var(--font-texto);color:var(--encre-douce);margin:0}</style>
+</head>
+<body>
+<div class="ds">
+<div class="ds-g"><p class="ds-lab">No texto · normal, hover, foco</p>
+<p class="en-texto" style="max-width:600px">Quer saber como é a primeira aula? <a class="en-link" href="#">Eu conto aqui</a>. Passando o mouse: <a class="en-link is-hover" href="#">vira rabisco</a>. Com teclado: <a class="en-link is-focus" href="#">ganha o anel azul</a>.</p></div>
+<div class="ds-g"><p class="ds-lab">Link com seta</p><div class="ds-row">
+<a class="en-link en-link--seta" href="#">C'est parti<svg class="en-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+<a class="en-link en-link--seta is-hover" href="#">Ver os formatos<svg class="en-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div></div>
+<div class="ds-g"><p class="ds-lab">Sobre fundo azul</p>
+<p class="en-texto" style="background:var(--bleu);color:var(--texte-inverse);padding:16px 20px;border-radius:18px;max-width:480px">Ficou alguma dúvida? <a class="en-link en-link--inverso" href="#">Me manda uma mensagem</a>.</p></div>
+</div>
+</body>
+</html>

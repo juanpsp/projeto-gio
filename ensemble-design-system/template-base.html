@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página nova — Ensemble</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&amp;family=Figtree:ital,wght@0,400..800;1,400..700&amp;family=Fredoka:wght@400..700&amp;display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/ensemble.css">
+<style>
+  /* Estrutura da página (o design system cuida das peças, não do layout) */
+  .secao { padding: var(--espaco-8) var(--espaco-4); }
+  .secao--alt { background: var(--papier-fonce); }
+  .caixa { max-width: 1080px; margin: 0 auto; }
+  @media (min-width: 768px) { .secao { padding: var(--espaco-9) var(--espaco-6); } }
+</style>
+</head>
+<body>
+<section class="secao">
+  <div class="caixa">
+    <p class="en-rotulo">Comece por aqui</p>
+    <h1 class="en-display">On apprend <span class="en-sublinhado">ensemble</span>.</h1>
+    <p class="en-lead">Troque este bloco pelo conteúdo real. As classes do sistema começam com <code>en-</code>.</p>
+    <p style="margin-top:var(--espaco-5)"><a class="en-btn en-btn--primario" href="#contato">C'est parti!</a></p>
+  </div>
+</section>
+</body>
+</html>

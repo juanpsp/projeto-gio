@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/ensemble.css">
+<meta charset="utf-8">
+<title>Ensemble</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&amp;display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--papier); color:var(--encre); font-family:var(--font-texto); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .bleu { fill:var(--bleu); }
+  .rouge { fill:var(--rouge); }
+  .ciel { fill:var(--ciel); }
+  .rose { fill:var(--rose); }
+  .encre { fill:var(--encre); }
+  .slab { rx:var(--raio-xl); }
+  .pill { rx:var(--espaco-3); }
+  .words { position:absolute; left:var(--espaco-6); bottom:var(--espaco-6); max-width:440px; }
+  .name { margin:0; font-family:var(--font-titulo); font-size:80px; line-height:.92; font-weight:600; letter-spacing:-.02em; color:var(--encre); }
+  .tag { margin:var(--espaco-3) 0 0 4px; font-size:14px; line-height:20px; color:var(--encre-douce); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      bleu slab 128×276 bled off the top · rouge slab 176×264 bled off the right and bottom · the papier ground between them is the flag's white band · ciel and rose pills · three encre dots — ≈30% of 960×288
+  arrangement three unequal vertical bands, bleu | ground | rouge, like the flag read as rhythm rather than drawn
+  pattern     pills, from "tudo arredondado… botões e etiquetas são pílulas" and the Conversa component: ciel pills (the teacher, left) and rose pills (the student, right) alternating up the white band, ending in the encre typing dots
+  scales      pills espaco-5 tall at an espaco-6 pitch, rx espaco-3 (half the height); slabs rx raio-xl; gutters espaco-4; dots r espaco-1
+-->
+<rect class="bleu slab" x="24" y="-36" width="128" height="276" rx="36"/>
+<rect class="rouge slab" x="328" y="48" width="176" height="264" rx="36"/>
+<rect class="ciel pill" x="168" y="48" width="104" height="24" rx="12"/>
+<rect class="rose pill" x="224" y="80" width="88" height="24" rx="12"/>
+<rect class="ciel pill" x="168" y="112" width="72" height="24" rx="12"/>
+<rect class="rose pill" x="200" y="144" width="112" height="24" rx="12"/>
+<rect class="ciel pill" x="168" y="176" width="96" height="24" rx="12"/>
+<circle class="encre" cx="268" cy="220" r="4"/>
+<circle class="encre" cx="284" cy="220" r="4"/>
+<circle class="encre" cx="300" cy="220" r="4"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Ensemble</h1>
+<p class="tag">On apprend ensemble: a gente aprende junto (e erra junto).</p>
+</div>
+</div>
+</body>
+</html>

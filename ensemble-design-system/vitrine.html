@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ensemble — vitrine do design system</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&amp;family=Figtree:ital,wght@0,400..800;1,400..700&amp;family=Fredoka:wght@400..700&amp;display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/ensemble.css">
+<style>
+  body { padding: var(--espaco-6) var(--espaco-4) var(--espaco-9); }
+  .caixa { max-width: 960px; margin: 0 auto; }
+  .topo { display: grid; gap: var(--espaco-4); margin-bottom: var(--espaco-7); }
+  .nav { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 15px; }
+  h2.en-h2 { margin: var(--espaco-8) 0 var(--espaco-4); }
+  .peca { margin-bottom: var(--espaco-6); }
+  .peca header { display: grid; gap: 4px; margin-bottom: var(--espaco-3); }
+  .peca iframe { width: 100%; border: var(--traco-fino) solid var(--ligne); border-radius: var(--raio-lg); background: var(--papier); }
+</style>
+</head>
+<body>
+<div class="caixa">
+<header class="topo">
+<p class="en-rotulo">Design system</p>
+<h1 class="en-display">Ensemble</h1>
+<p class="en-lead">On apprend ensemble: a gente aprende junto (e erra junto). Cada peça abaixo é um arquivo em <code>componentes/</code>, com guia em <code>README.md</code> e exemplo em <code>exemplo.html</code>.</p>
+<p class="nav"><a class="en-link" href="#Fundamentos">Fundamentos</a> · <a class="en-link" href="#Ações">Ações</a> · <a class="en-link" href="#Balões de fala">Balões de fala</a> · <a class="en-link" href="#Cards">Cards</a> · <a class="en-link" href="#Selos e etiquetas">Selos e etiquetas</a> · <a class="en-link" href="#Destaques e citações">Destaques e citações</a> · <a class="en-link" href="#Ícones e ilustrações">Ícones e ilustrações</a> · <a class="en-link" href="#Decoração">Decoração</a> · <a class="en-link" href="#Formulário">Formulário</a> · <a class="en-link" href="#Capa">Capa</a></p>
+<p class="en-pequeno">Dica: abra esta página com um servidor local (<code>python3 -m http.server</code>) para os exemplos carregarem sempre.</p>
+</header>
+
+<h2 class="en-h2" id="Fundamentos">Fundamentos</h2>
+<section class="peca">
+<header><h3 class="en-h3">Paleta</h3><p class="en-pequeno">Mostra as cores da marca, onde cada uma entra e quais combinações de texto e fundo estão aprovadas.</p><p class="en-legenda">componentes/Paleta/ · <a class="en-link" href="componentes/Paleta/README.md">guia</a> · <a class="en-link" href="componentes/Paleta/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Paleta/exemplo.html" title="Paleta" loading="lazy" style="height:989px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Tipografia</h3><p class="en-pequeno">Três famílias com papéis fixos: Fredoka para títulos, Figtree para ler e Caveat para os recadinhos à mão.</p><p class="en-legenda">componentes/Tipografia/ · <a class="en-link" href="componentes/Tipografia/README.md">guia</a> · <a class="en-link" href="componentes/Tipografia/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Tipografia/exemplo.html" title="Tipografia" loading="lazy" style="height:1315px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Ações">Ações</h2>
+<section class="peca">
+<header><h3 class="en-h3">Botão</h3><p class="en-pequeno">Pílula com um "degrau" embaixo que afunda quando você aperta; é a ação principal de cada bloco.</p><p class="en-legenda">componentes/Botao/ · <a class="en-link" href="componentes/Botao/README.md">guia</a> · <a class="en-link" href="componentes/Botao/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Botao/exemplo.html" title="Botão" loading="lazy" style="height:1111px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Link</h3><p class="en-pequeno">Texto azul sublinhado que vira um rabisco vermelho ondulado no hover.</p><p class="en-legenda">componentes/Link/ · <a class="en-link" href="componentes/Link/README.md">guia</a> · <a class="en-link" href="componentes/Link/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Link/exemplo.html" title="Link" loading="lazy" style="height:416px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Balões de fala">Balões de fala</h2>
+<section class="peca">
+<header><h3 class="en-h3">Balão de fala</h3><p class="en-pequeno">O elemento mais característico da marca: fala da professora, do aluno, destaques e diálogos.</p><p class="en-legenda">componentes/BalaoDeFala/ · <a class="en-link" href="componentes/BalaoDeFala/README.md">guia</a> · <a class="en-link" href="componentes/BalaoDeFala/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/BalaoDeFala/exemplo.html" title="Balão de fala" loading="lazy" style="height:1156px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Conversa</h3><p class="en-pequeno">Mensagens em estilo chat para encenar a troca entre professora e aluno (seções "como é uma aula", FAQ).</p><p class="en-legenda">componentes/Conversa/ · <a class="en-link" href="componentes/Conversa/README.md">guia</a> · <a class="en-link" href="componentes/Conversa/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Conversa/exemplo.html" title="Conversa" loading="lazy" style="height:491px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Cards">Cards</h2>
+<section class="peca">
+<header><h3 class="en-h3">Card de depoimento</h3><p class="en-pequeno">Depoimento de aluno com as aspas francesas « em um selinho vermelho, ou em formato de balão de fala.</p><p class="en-legenda">componentes/CardDepoimento/ · <a class="en-link" href="componentes/CardDepoimento/README.md">guia</a> · <a class="en-link" href="componentes/CardDepoimento/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/CardDepoimento/exemplo.html" title="Card de depoimento" loading="lazy" style="height:416px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Card de formato de aula</h3><p class="en-pequeno">Card para cada formato de aula: etiqueta, título, descrição, lista com checks, detalhes e botão.</p><p class="en-legenda">componentes/CardFormato/ · <a class="en-link" href="componentes/CardFormato/README.md">guia</a> · <a class="en-link" href="componentes/CardFormato/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/CardFormato/exemplo.html" title="Card de formato de aula" loading="lazy" style="height:701px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Card de informação</h3><p class="en-pequeno">Card com ícone em círculo, título e texto curto, para diferenciais e "como funciona".</p><p class="en-legenda">componentes/CardInfo/ · <a class="en-link" href="componentes/CardInfo/README.md">guia</a> · <a class="en-link" href="componentes/CardInfo/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/CardInfo/exemplo.html" title="Card de informação" loading="lazy" style="height:638px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Card de número</h3><p class="en-pequeno">Número grande em Fredoka com rótulo e uma anotação à mão que tira a seriedade do número.</p><p class="en-legenda">componentes/CardNumero/ · <a class="en-link" href="componentes/CardNumero/README.md">guia</a> · <a class="en-link" href="componentes/CardNumero/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/CardNumero/exemplo.html" title="Card de número" loading="lazy" style="height:512px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Selos e etiquetas">Selos e etiquetas</h2>
+<section class="peca">
+<header><h3 class="en-h3">Adesivo</h3><p class="en-pequeno">Adesivo inclinado com contorno e sombra chapada, como se fosse colado no caderno.</p><p class="en-legenda">componentes/Adesivo/ · <a class="en-link" href="componentes/Adesivo/README.md">guia</a> · <a class="en-link" href="componentes/Adesivo/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Adesivo/exemplo.html" title="Adesivo" loading="lazy" style="height:416px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Etiqueta</h3><p class="en-pequeno">Pílula pequena para categorizar: nível, modalidade, duração, tema.</p><p class="en-legenda">componentes/Etiqueta/ · <a class="en-link" href="componentes/Etiqueta/README.md">guia</a> · <a class="en-link" href="componentes/Etiqueta/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Etiqueta/exemplo.html" title="Etiqueta" loading="lazy" style="height:416px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Selo</h3><p class="en-pequeno">Selos redondos de efeito: estrela de pontas para novidades e o selo giratório com o lema da marca.</p><p class="en-legenda">componentes/Selo/ · <a class="en-link" href="componentes/Selo/README.md">guia</a> · <a class="en-link" href="componentes/Selo/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Selo/exemplo.html" title="Selo" loading="lazy" style="height:416px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Destaques e citações">Destaques e citações</h2>
+<section class="peca">
+<header><h3 class="en-h3">Bloco de destaque</h3><p class="en-pequeno">Faixa colorida de cantos bem redondos para chamadas: CTA de meio e fim de página, frases de impacto.</p><p class="en-legenda">componentes/BlocoDestaque/ · <a class="en-link" href="componentes/BlocoDestaque/README.md">guia</a> · <a class="en-link" href="componentes/BlocoDestaque/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/BlocoDestaque/exemplo.html" title="Bloco de destaque" loading="lazy" style="height:891px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Citação</h3><p class="en-pequeno">Frase de efeito em Fredoka entre aspas francesas « » vermelhas, com assinatura à mão.</p><p class="en-legenda">componentes/Citacao/ · <a class="en-link" href="componentes/Citacao/README.md">guia</a> · <a class="en-link" href="componentes/Citacao/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Citacao/exemplo.html" title="Citação" loading="lazy" style="height:416px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Dica</h3><p class="en-pequeno">Bloco tipo post-it com fita adesiva para dicas, erros comuns e explicações rápidas.</p><p class="en-legenda">componentes/Dica/ · <a class="en-link" href="componentes/Dica/README.md">guia</a> · <a class="en-link" href="componentes/Dica/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Dica/exemplo.html" title="Dica" loading="lazy" style="height:624px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Ícones e ilustrações">Ícones e ilustrações</h2>
+<section class="peca">
+<header><h3 class="en-h3">Ícones</h3><p class="en-pequeno">22 ícones de traço 2px com cantos redondos numa grade de 24px, incluindo croissant, boina, Torre Eiffel, baguete e café.</p><p class="en-legenda">componentes/Icones/ · <a class="en-link" href="componentes/Icones/README.md">guia</a> · <a class="en-link" href="componentes/Icones/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Icones/exemplo.html" title="Ícones" loading="lazy" style="height:622px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Ilustrações</h3><p class="en-pequeno">Quatro ilustrações pequenas, com humor, que brincam com as referências francesas sem cair no clichê.</p><p class="en-legenda">componentes/Ilustracoes/ · <a class="en-link" href="componentes/Ilustracoes/README.md">guia</a> · <a class="en-link" href="componentes/Ilustracoes/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Ilustracoes/exemplo.html" title="Ilustrações" loading="lazy" style="height:416px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Decoração">Decoração</h2>
+<section class="peca">
+<header><h3 class="en-h3">Divisores</h3><p class="en-pequeno">Separadores de seção desenhados à mão.</p><p class="en-legenda">componentes/Divisores/ · <a class="en-link" href="componentes/Divisores/README.md">guia</a> · <a class="en-link" href="componentes/Divisores/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Divisores/exemplo.html" title="Divisores" loading="lazy" style="height:482px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Formas e fundos</h3><p class="en-pequeno">Manchas orgânicas para colocar atrás de fotos e ilustrações, e o fundo de caderno francês para blocos especiais.</p><p class="en-legenda">componentes/FormasEFundos/ · <a class="en-link" href="componentes/FormasEFundos/README.md">guia</a> · <a class="en-link" href="componentes/FormasEFundos/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/FormasEFundos/exemplo.html" title="Formas e fundos" loading="lazy" style="height:419px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Rabiscos</h3><p class="en-pequeno">Marcas feitas à mão para destacar palavras e apontar coisas: sublinhados, círculo, marca-texto, setas, brilhos e fita adesiva.</p><p class="en-legenda">componentes/Rabiscos/ · <a class="en-link" href="componentes/Rabiscos/README.md">guia</a> · <a class="en-link" href="componentes/Rabiscos/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Rabiscos/exemplo.html" title="Rabiscos" loading="lazy" style="height:718px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Formulário">Formulário</h2>
+<section class="peca">
+<header><h3 class="en-h3">Campo de texto</h3><p class="en-pequeno">Campos de formulário grandes, legíveis e simpáticos, com rótulo sempre visível.</p><p class="en-legenda">componentes/CampoTexto/ · <a class="en-link" href="componentes/CampoTexto/README.md">guia</a> · <a class="en-link" href="componentes/CampoTexto/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/CampoTexto/exemplo.html" title="Campo de texto" loading="lazy" style="height:868px"></iframe>
+</section>
+<section class="peca">
+<header><h3 class="en-h3">Escolhas</h3><p class="en-pequeno">Opções em pílula (rádio) e caixas de seleção para perguntas rápidas no formulário.</p><p class="en-legenda">componentes/Escolhas/ · <a class="en-link" href="componentes/Escolhas/README.md">guia</a> · <a class="en-link" href="componentes/Escolhas/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Escolhas/exemplo.html" title="Escolhas" loading="lazy" style="height:416px"></iframe>
+</section>
+
+<h2 class="en-h2" id="Capa">Capa</h2>
+<section class="peca">
+<header><h3 class="en-h3">Capa</h3><p class="en-pequeno">A capa do design system.</p><p class="en-legenda">componentes/Capa/ · <a class="en-link" href="componentes/Capa/README.md">guia</a> · <a class="en-link" href="componentes/Capa/exemplo.html" target="_blank">abrir sozinho</a></p></header>
+<iframe src="componentes/Capa/exemplo.html" title="Capa" loading="lazy" style="height:416px"></iframe>
+</section>
+
+</div>
+</body>
+</html>

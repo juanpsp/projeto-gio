@@ -1,0 +1,425 @@
+/* ==========================================================================
+   Landing — Gio, professora de francês
+   Layout e movimento da PÁGINA. As peças vêm do Ensemble (classes .en-*).
+   Nada aqui inventa cor: tudo sai dos tokens de ensemble-design-system.
+   ========================================================================== */
+
+/* ───────── Barra de rolagem ─────────
+   Escondida a pedido. A página continua rolando normalmente (roda, toque,
+   teclado, barra de espaço); o que some é só a barrinha lateral. */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+/* ───────── Rolagem entre seções ─────────
+   A descida suave é feita no JS (bloco 8), não com scroll-behavior:
+   o navegador ignora scroll-behavior quando o sistema está com
+   "reduzir movimento", e aí não daria pra testar nem controlar a duração.
+   O scroll-margin vale para o salto seco (sem JS ou com movimento
+   reduzido): desconta a barra fixa, senão ela cobre o título da seção. */
+section[id] { scroll-margin-top: 76px; }
+
+/* ───────── Estrutura de página ───────── */
+.secao { position: relative; padding: var(--espaco-8) var(--espaco-4); overflow: clip; }
+.secao--alt { background: var(--papier-fonce); }
+.caixa { max-width: 1080px; margin: 0 auto; }
+.caixa--estreita { max-width: 760px; }
+.cabeca-secao { display: grid; gap: var(--espaco-3); margin-bottom: var(--espaco-7); max-width: 720px; }
+.cabeca-secao--centro { margin-inline: auto; text-align: center; justify-items: center; }
+
+@media (min-width: 768px) {
+  .secao { padding: var(--espaco-9) var(--espaco-6); }
+}
+
+/* Pilha vertical genérica */
+.pilha { display: grid; gap: var(--espaco-5); }
+.pilha--curta { gap: var(--espaco-4); }
+.pilha--larga { gap: var(--espaco-6); }
+
+/* ───────── Barra de topo ───────── */
+.topo {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--espaco-4);
+  padding: 12px var(--espaco-4);
+  background: color-mix(in srgb, var(--papier) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: var(--traco-fino) solid transparent;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.topo.is-colado { border-bottom-color: var(--ligne); box-shadow: 0 6px 20px -18px #1b254566; }
+.topo__marca { font-family: var(--font-titulo); font-weight: 600; font-size: 24px; color: var(--encre); text-decoration: none; letter-spacing: -.01em; }
+.topo__nav { display: none; gap: var(--espaco-5); font-size: 15px; font-weight: 600; }
+.topo__nav a { color: var(--encre-douce); text-decoration: none; border-radius: 4px; transition: color .15s; }
+.topo__nav a:hover { color: var(--bleu); }
+.topo__nav a:focus-visible { outline: none; box-shadow: var(--anel-foco); }
+@media (min-width: 900px) { .topo__nav { display: flex; } }
+@media (max-width: 899px) { .topo__acao { display: none; } }
+
+/* ───────── 1. Hero ───────── */
+.hero { position: relative; padding-top: var(--espaco-7); padding-bottom: var(--espaco-8); }
+.hero__grade { display: grid; gap: var(--espaco-7); align-items: center; }
+.hero__texto { display: grid; gap: var(--espaco-4); justify-items: start; }
+.hero__acoes { display: grid; gap: var(--espaco-3); width: 100%; margin-top: var(--espaco-2); }
+.hero__selos { display: flex; flex-wrap: wrap; align-items: center; gap: var(--espaco-3) var(--espaco-5); margin-top: var(--espaco-2); }
+
+@media (min-width: 880px) {
+  .hero__grade { grid-template-columns: 1.05fr .95fr; gap: var(--espaco-8); }
+  .hero__acoes { grid-auto-flow: column; justify-content: start; align-items: center; width: auto; }
+}
+
+/* Foto do hero — versão A: recorte sobre forma orgânica.
+   No celular tudo fica DENTRO da caixa: nada de adesivo meio fora da tela. */
+.retrato { position: relative; width: min(100%, 420px); margin-inline: auto; }
+.retrato__forma {
+  position: absolute; inset: 6% 0 -2% 0;
+  background: var(--ciel);
+  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+}
+.retrato__forma--beurre { background: var(--beurre); inset: 14% 10% 6% 0; opacity: .55; }
+/* A foto de origem corta os ombros numa linha reta. Esta máscara dissolve
+   os últimos pixels para ela se apoiar na forma em vez de terminar em régua. */
+.retrato__img {
+  position: relative; display: block; width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+}
+.retrato__adesivo { position: absolute; z-index: 2; }
+.retrato__adesivo--alto { top: 0; right: 0; }
+.retrato__adesivo--baixo { bottom: 10%; left: 0; }
+.retrato__selo { position: absolute; z-index: 2; bottom: 0; right: 0; }
+
+/* A partir do desktop os elementos podem vazar um pouco para fora da foto */
+@media (min-width: 880px) {
+  .retrato__forma { inset: 6% -6% -2% -6%; }
+  .retrato__forma--beurre { inset: 14% 4% 6% -14%; }
+  .retrato__adesivo--alto { top: 2%; right: -2%; }
+  .retrato__adesivo--baixo { bottom: 6%; left: -4%; }
+  .retrato__selo { bottom: -6%; right: -4%; }
+}
+
+/* Foto do hero — versão B: polaroid */
+.retrato-polaroid { width: min(100%, 360px); margin-inline: auto; }
+.retrato-polaroid .en-foto { width: 100%; }
+
+/* Balões soltos decorativos */
+.hero__foto { position: relative; }
+.balao-solto { max-width: 230px; }
+.balao-solto .en-bulle { margin-bottom: 0; font-size: 16px; }
+
+@media (min-width: 880px) {
+  .balao-solto { position: absolute; z-index: 3; }
+  .hero__balao--um { top: -4%; left: -10%; }
+  .hero__balao--dois { bottom: 4%; right: -6%; }
+}
+@media (max-width: 879px) {
+  .hero__baloes { display: flex; flex-wrap: wrap; gap: var(--espaco-3); margin-top: var(--espaco-5); justify-content: center; }
+  .balao-solto { max-width: none; }
+}
+
+/* ───────── 3. História (fundo de caderno) ───────── */
+.caderno {
+  border-radius: var(--raio-lg);
+  border: var(--traco) solid var(--encre);
+  box-shadow: var(--sombra-carimbo);
+  padding: var(--espaco-6) var(--espaco-5) var(--espaco-6) 70px;
+  overflow: hidden;
+}
+@media (min-width: 768px) { .caderno { padding: var(--espaco-7) var(--espaco-7) var(--espaco-7) 92px; } }
+.caderno__linha { display: grid; gap: var(--espaco-2); margin-bottom: var(--espaco-6); }
+.caderno__linha:last-child { margin-bottom: 0; }
+.caderno__ano { font-family: var(--font-nota); font-weight: 700; font-size: 26px; line-height: 1; color: var(--rouge-action); }
+
+/* ───────── 4. Números ───────── */
+.numeros { display: grid; gap: var(--espaco-4); grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 860px) { .numeros { grid-template-columns: repeat(4, 1fr); gap: var(--espaco-5); } }
+
+/* ───────── Vídeo chamada ─────────
+   A aula é por vídeo chamada, cara a cara. Estas peças dizem isso sem
+   precisar de texto: o selo "em chamada" e a janela da seção 5. */
+.chip-chamada {
+  display: inline-flex; align-items: center; gap: 7px;
+  box-sizing: border-box; padding: 5px 13px 6px;
+  background: var(--blanc); color: var(--encre);
+  border: var(--traco) solid var(--encre); border-radius: var(--raio-pilula);
+  font-family: var(--font-texto); font-size: 13px; font-weight: 700; line-height: 1.2;
+  white-space: nowrap;
+}
+.chip-chamada--escuro { background: var(--encre); color: var(--texte-inverse); border-color: var(--encre); }
+.chip-chamada__ponto { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--rouge-action); }
+.movimento .chip-chamada__ponto { animation: pg-pulsa 2.2s ease-in-out infinite; }
+@keyframes pg-pulsa {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .4; transform: scale(.78); }
+}
+/* Fica abaixo da linha da boina para os dois não se atropelarem. */
+.retrato__chamada { position: absolute; z-index: 2; top: 27%; left: 0; }
+@media (min-width: 880px) { .retrato__chamada { top: 24%; left: -8%; } }
+
+/* ───────── A boina ─────────
+   Cai do céu conforme a pessoa rola e pousa na cabeça dela.
+   As medidas saem do recorte: cabeça centrada em 46% da largura,
+   topo do crânio em 1,5% da altura, crânio com 26% da largura. */
+.boina {
+  position: absolute; z-index: 3; pointer-events: none;
+  left: 46%; width: 37%; margin-left: -18.5%;
+  top: -3%;
+}
+.boina__peca {
+  transform-origin: 50% 86%;
+  transform: rotate(-14deg);
+  will-change: transform;
+}
+.boina__svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* ───────── 5. Como funcionam as aulas ───────── */
+.conversa-bloco { display: grid; gap: var(--espaco-7); align-items: center; }
+@media (min-width: 900px) { .conversa-bloco { grid-template-columns: 430px 1fr; gap: var(--espaco-8); } }
+
+.chamada {
+  position: relative; box-sizing: border-box;
+  display: grid; gap: var(--espaco-4);
+  background: var(--blanc); border: var(--traco) solid var(--encre);
+  border-radius: var(--raio-lg); padding: var(--espaco-4);
+  box-shadow: var(--sombra-carimbo);
+}
+.chamada__barra { display: flex; align-items: center; justify-content: space-between; gap: var(--espaco-3); }
+.chamada__tempo { font-family: var(--font-titulo); font-weight: 600; font-size: 15px; color: var(--encre-douce); font-variant-numeric: tabular-nums; }
+
+.chamada__palco { position: relative; }
+.chamada__tela {
+  position: relative; overflow: hidden;
+  aspect-ratio: 4 / 3; border-radius: var(--raio-md);
+  background: var(--ciel);
+}
+.chamada__tela img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.chamada__mini {
+  position: absolute; right: 10px; bottom: 10px;
+  display: grid; place-items: center;
+  width: 30%; max-width: 112px; aspect-ratio: 4 / 3;
+  background: var(--beurre-clair); color: var(--bleu);
+  border: var(--traco) solid var(--blanc); border-radius: var(--raio-sm);
+  box-shadow: 0 2px 10px #1b254540;
+}
+.chamada__etiqueta {
+  position: absolute; left: 8px; bottom: 8px;
+  padding: 2px 9px 3px; border-radius: var(--raio-pilula);
+  background: color-mix(in srgb, var(--encre) 80%, transparent); color: var(--texte-inverse);
+  font-size: 12px; font-weight: 700; line-height: 1.35;
+}
+.chamada__mini .chamada__etiqueta { left: 5px; bottom: 5px; padding: 1px 7px 2px; font-size: 11px; }
+
+.chamada .en-dialogo { max-width: none; }
+
+.chamada__controles {
+  display: flex; justify-content: center; gap: var(--espaco-3);
+  padding-top: var(--espaco-4); border-top: var(--traco-fino) solid var(--ligne);
+}
+.chamada__botao { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--papier-fonce); color: var(--encre); }
+.chamada__botao svg { width: 20px; height: 20px; stroke: currentColor; fill: none; }
+.chamada__botao--desligar { background: var(--rouge-action); color: var(--texte-inverse); }
+.chamada__botao--desligar svg { transform: rotate(134deg); }
+
+/* A última mensagem do CTA é só o botão de entrar na chamada */
+.en-msg--link { background: transparent; padding: 4px 0 0; }
+
+/* ───────── 6. Para quem ───────── */
+.duas-colunas { display: grid; gap: var(--espaco-5); }
+@media (min-width: 820px) { .duas-colunas { grid-template-columns: 1fr 1fr; gap: var(--espaco-6); } }
+.lista-objetivos { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+
+/* ───────── 7 e 8. Grades de card ───────── */
+.grade-formatos { display: grid; gap: var(--espaco-6) var(--espaco-5); max-width: 780px; }
+@media (min-width: 720px) { .grade-formatos { grid-template-columns: repeat(2, 1fr); } }
+.grade-formatos .en-card { display: flex; flex-direction: column; height: 100%; }
+
+/* ───────── 9. Depoimentos ───────── */
+.grade-depoimentos { display: grid; gap: var(--espaco-6) var(--espaco-5); }
+@media (min-width: 760px) { .grade-depoimentos { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) { .grade-depoimentos { grid-template-columns: repeat(3, 1fr); } }
+.prints { display: grid; gap: var(--espaco-4); grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.print-vazio {
+  display: grid; place-items: center; gap: 8px; text-align: center;
+  min-height: 260px; padding: var(--espaco-4);
+  background: var(--blanc); border: var(--traco) dashed var(--trait); border-radius: var(--raio-md);
+  color: var(--encre-douce);
+}
+
+/* ───────── 10. Formação ───────── */
+.formacao { display: grid; gap: var(--espaco-5); }
+@media (min-width: 880px) { .formacao { grid-template-columns: 1.15fr .85fr; gap: var(--espaco-6); align-items: start; } }
+
+/* ───────── 11. FAQ ───────── */
+.faq { display: grid; gap: var(--espaco-3); max-width: 760px; margin-inline: auto; }
+.faq__item {
+  background: var(--blanc); border: var(--traco-fino) solid var(--ligne);
+  border-radius: var(--raio-md); box-shadow: var(--sombra-suave);
+  overflow: hidden; transition: border-color .2s ease;
+}
+.faq__item[open] { border-color: var(--bleu); }
+.faq__item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--espaco-4);
+  padding: var(--espaco-4) var(--espaco-5);
+  font-family: var(--font-titulo); font-weight: 600; font-size: 19px; line-height: 1.3;
+  color: var(--encre); cursor: pointer; list-style: none; min-height: 44px;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary:focus-visible { outline: none; box-shadow: var(--anel-foco); border-radius: var(--raio-md); }
+.faq__sinal { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--ciel); color: var(--bleu); transition: transform .25s cubic-bezier(.3,.7,.4,1.3), background-color .2s; }
+.faq__sinal svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.5; }
+.faq__item[open] .faq__sinal { transform: rotate(45deg); background: var(--bleu); color: var(--texte-inverse); }
+.faq__resposta { padding: 0 var(--espaco-5) var(--espaco-5); }
+
+/* ───────── 12. CTA final ───────── */
+.cta-final { display: grid; gap: var(--espaco-6); align-items: center; }
+@media (min-width: 920px) { .cta-final { grid-template-columns: 1.1fr .9fr; gap: var(--espaco-8); } }
+.cta-conversa { background: color-mix(in srgb, var(--blanc) 14%, transparent); border-radius: var(--raio-lg); padding: var(--espaco-5); }
+.cta-conversa .en-dialogo { max-width: none; }
+
+/* ───────── Rodapé ───────── */
+.rodape { background: var(--papier-fonce); padding: var(--espaco-7) var(--espaco-4); }
+.rodape__grade { display: grid; gap: var(--espaco-5); align-items: center; }
+@media (min-width: 760px) { .rodape__grade { grid-template-columns: 1fr auto; } }
+.rodape__marca { font-family: var(--font-titulo); font-weight: 600; font-size: 26px; color: var(--encre); }
+.rodape__links { display: flex; flex-wrap: wrap; gap: var(--espaco-4); }
+
+/* ───────── Botão flutuante de contato ───────── */
+.flutuante {
+  position: fixed; right: 16px; bottom: 16px; z-index: 45;
+  opacity: 0; transform: translateY(14px) scale(.9); pointer-events: none;
+  transition: opacity .3s ease, transform .3s cubic-bezier(.3,.7,.4,1.4);
+}
+.flutuante.is-visivel { opacity: 1; transform: none; pointer-events: auto; }
+@media (min-width: 900px) { .flutuante { right: 24px; bottom: 24px; } }
+
+/* ==========================================================================
+   MOVIMENTO
+   O sistema pede movimento pequeno e com mola. O "dinâmico" vem do
+   encadeamento das mensagens, não de entradas grandes.
+   ========================================================================== */
+
+/* Só entra em cena quando o JS confirma que o visitante aceita movimento
+   (o JS põe .movimento no <html>). Sem JS ou com movimento reduzido,
+   nenhuma destas regras existe e a página já nasce pronta. */
+.movimento [data-anima] { opacity: 0; transform: translateY(12px); }
+.movimento [data-anima].is-visivel {
+  opacity: 1; transform: none;
+  transition: opacity .5s ease, transform .55s cubic-bezier(.3,.7,.4,1.25);
+  transition-delay: calc(var(--atraso, 0) * 80ms);
+}
+.movimento [data-anima="lado"] { transform: translateX(-16px); }
+.movimento [data-anima="lado-dir"] { transform: translateX(16px); }
+.movimento [data-anima="pop"] { transform: scale(.94); }
+.movimento [data-anima="lado"].is-visivel,
+.movimento [data-anima="lado-dir"].is-visivel,
+.movimento [data-anima="pop"].is-visivel { transform: none; }
+
+/* Balões que respiram */
+.movimento .flutua { animation: pg-flutua 5.5s ease-in-out infinite; animation-delay: var(--atraso-f, 0s); }
+@keyframes pg-flutua {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-7px) rotate(calc(var(--rot, 0deg) + .8deg)); }
+}
+
+/* Mensagens do chat: entram uma a uma */
+.movimento .conversa-anima .en-msg { opacity: 0; transform: translateY(8px) scale(.96); }
+.movimento .conversa-anima .en-msg.is-dentro {
+  opacity: 1; transform: none;
+  transition: opacity .28s ease, transform .34s cubic-bezier(.3,.7,.4,1.5);
+}
+
+/* Rabiscos que se desenham */
+.movimento .rabisco path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.movimento .rabisco.is-visivel path { animation: pg-desenha .75s cubic-bezier(.4,.1,.3,1) forwards; }
+.movimento .rabisco.is-visivel path:nth-child(2) { animation-delay: .32s; }
+@keyframes pg-desenha { to { stroke-dashoffset: 0; } }
+
+/* Parallax discreto (o JS alimenta --desloc) */
+.movimento [data-parallax] { transform: translate3d(0, var(--desloc, 0px), 0); will-change: transform; }
+
+/* Cinto de segurança: mesmo que .movimento entre por engano, quem pediu
+   menos movimento não vê nada se mexer.
+   `.testar-movimento` é um escape só para revisão (painel provisório ou
+   ?movimento=1), para conferir as animações numa máquina que está com
+   "reduzir movimento" ligado no sistema. Sai junto com o painel. */
+@media (prefers-reduced-motion: reduce) {
+  html:not(.testar-movimento) .movimento [data-anima],
+  html:not(.testar-movimento) .movimento .conversa-anima .en-msg { opacity: 1 !important; transform: none !important; transition: none !important; }
+  html:not(.testar-movimento) .movimento .rabisco path { stroke-dasharray: none; stroke-dashoffset: 0; }
+  html:not(.testar-movimento) .movimento .flutua { animation: none; }
+  html:not(.testar-movimento) .flutuante { transition: none; }
+}
+
+/* Rabisco inline (sublinhado desenhado sob uma palavra) */
+.rabisco { display: block; width: 100%; height: auto; overflow: visible; }
+.sublinha { position: relative; display: inline-block; white-space: nowrap; }
+.sublinha .rabisco { position: absolute; left: 0; right: 0; bottom: -.22em; width: 100%; height: .34em; }
+
+/* ==========================================================================
+   MARCAÇÃO DE CONTEÚDO PROVISÓRIO
+   Tudo que só a Gio pode confirmar (números, depoimentos, formação, datas)
+   está marcado. O painel no canto liga e desliga a marcação.
+   ========================================================================== */
+[data-pendente] {
+  background: color-mix(in srgb, var(--beurre) 55%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--beurre) 55%, transparent);
+  border-radius: 3px;
+}
+[data-pendente]::after {
+  content: "a confirmar";
+  display: inline-block; vertical-align: super;
+  margin-left: 4px;
+  font-family: var(--font-texto); font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--rouge-fonce); opacity: .85;
+}
+.bloco-pendente {
+  outline: 2px dashed var(--rouge-action); outline-offset: 6px; border-radius: var(--raio-sm);
+}
+html.sem-marcas [data-pendente] { background: none; box-shadow: none; }
+html.sem-marcas [data-pendente]::after { display: none; }
+html.sem-marcas .bloco-pendente { outline: none; }
+
+/* ───────── Painel provisório (sai antes de publicar) ───────── */
+.painel {
+  position: fixed; left: 16px; bottom: 16px; z-index: 60;
+  display: grid; gap: 8px;
+  padding: 12px 14px;
+  background: var(--encre); color: var(--texte-inverse);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-flutuante);
+  font-family: var(--font-texto); font-size: 12px; line-height: 1.3;
+  max-width: calc(100vw - 32px);
+}
+.painel__titulo {
+  display: flex; align-items: center; gap: 6px;
+  font: inherit; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: 10px;
+  padding: 0; min-height: 0; background: none; border: 0; color: inherit; opacity: .7; cursor: pointer;
+}
+.painel__titulo:hover { opacity: 1; }
+.painel__seta { transition: transform .2s ease; }
+.painel__corpo { display: grid; gap: 8px; }
+.painel.is-recolhido { padding: 8px 12px; }
+.painel.is-recolhido .painel__corpo { display: none; }
+.painel.is-recolhido .painel__seta { transform: rotate(-90deg); }
+.painel__linha { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.painel__aviso {
+  max-width: 250px; margin: 2px 0 0; padding-top: 8px;
+  border-top: 1px solid color-mix(in srgb, var(--texte-inverse) 25%, transparent);
+  font-size: 11px; line-height: 1.45; color: var(--beurre);
+}
+.painel__aviso strong { color: var(--texte-inverse); }
+.painel button {
+  font: inherit; font-weight: 700; cursor: pointer;
+  padding: 6px 12px; min-height: 32px;
+  background: transparent; color: var(--texte-inverse);
+  border: 1.5px solid color-mix(in srgb, var(--texte-inverse) 45%, transparent);
+  border-radius: var(--raio-pilula);
+  transition: background-color .15s, border-color .15s;
+}
+.painel button:hover { border-color: var(--texte-inverse); }
+.painel button[aria-pressed="true"] { background: var(--texte-inverse); color: var(--encre); border-color: var(--texte-inverse); }
+.painel button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--encre), 0 0 0 5px var(--beurre); }
+.painel__fechar { position: absolute; top: -10px; right: -10px; width: 26px; height: 26px; min-height: 0; padding: 0; display: grid; place-items: center; background: var(--rouge-action); border-color: var(--rouge-action); }
+@media (max-width: 620px) { .painel { left: 8px; bottom: 8px; font-size: 11px; } }
+
+/* Alternância das duas versões de hero */
+.hero-versao { display: none; }
+.hero-versao.is-ativa { display: block; }

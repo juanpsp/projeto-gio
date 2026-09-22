@@ -1,0 +1,57 @@
+/* Ensemble — tokens (gerado a partir de tokens.json).
+   Carregue este arquivo antes de ensemble.css. */
+
+:root {
+  /* cores */
+  --papier: #fcf8f1;  /* Fundo predominante de todas as páginas: um off-white quente, de folha de caderno. É a 'faixa branca' da bandeira. */
+  --papier-fonce: #f5eee2;  /* Fundo de seções alternadas e do rodapé, para separar blocos sem usar linhas. */
+  --blanc: #ffffff;  /* Superfície elevada sobre papier: cards, balões de fala brancos, campos de formulário. */
+  --encre: #1b2545;  /* Azul-marinho escuro para todo texto principal e para os contornos desenhados (balões, adesivos, botão contorno). 14:1 em papier, 12,8:1 em ciel, 11:1 em beurre. */
+  --encre-douce: #545d78;  /* Texto secundário, legendas e textos de apoio em papier, papier-fonce, blanc, ciel, rose e beurre-clair (≥5,5:1 em todos). */
+  --trait: #7a8198;  /* Borda de campos de formulário em repouso (≥3,3:1 em papier, blanc e papier-fonce). Não usar para texto. */
+  --ligne: #e7decf;  /* Linhas finas decorativas: divisores simples, borda de cards em repouso. Nunca como única marca de algo interativo. */
+  --bleu: #0055a4;  /* Azul da bandeira. Botão secundário, links, ícones de destaque, números em cards de estatística, fundo do bloco de destaque. Como texto: em papier, blanc, ciel e beurre-clair (≥6,3:1). */
+  --bleu-fonce: #00417f;  /* Hover e texto de links já visitados; preenchimento do botão secundário pressionado. */
+  --bleu-nuit: #002d5a;  /* Sombra de base do botão secundário (o 'degrau' embaixo dele) e fundo de faixas escuras. */
+  --ciel: #e5eefa;  /* Tinta azul suave: balões de fala da professora, blocos de informação, hover do botão contorno, etiquetas azuis. */
+  --rouge: #ef4135;  /* Vermelho da bandeira, só para detalhe: rabiscos, sublinhados, setas, estrelinhas, adesivos e ícones de destaque. Como texto só a partir de 24px (3,6:1 em papier); nunca em texto pequeno nem como fundo de texto pequeno. */
+  --rouge-action: #d0312a;  /* Vermelho um tom mais fundo para o botão primário (texto branco 5:1) e para texto vermelho pequeno em papier e blanc (≥4,7:1), como mensagens de erro. */
+  --rouge-fonce: #a92119;  /* Sombra de base e estado pressionado do botão primário; texto vermelho sobre rose (6:1). */
+  --rose: #fde7e3;  /* Tinta vermelha suave: balões do aluno, bloco 'erro comum', etiquetas vermelhas. Texto sobre ela: encre ou rouge-fonce. */
+  --beurre: #ffd970;  /* Cor de apoio (manteiga de croissant): marca-texto, adesivos, selo de destaque. Texto sobre ela sempre encre (11:1). */
+  --beurre-clair: #fff3cc;  /* Fundo do bloco 'dica da prof' e de post-its. Texto sobre ela: encre, encre-douce ou bleu. */
+  --texte-inverse: #ffffff;  /* Texto e ícones sobre bleu, bleu-fonce, bleu-nuit, rouge-action, rouge-fonce e encre. */
+
+  /* sombras */
+  --sombra-suave: 0 1px 2px #1b25450d, 0 8px 24px -10px #1b254524;
+  --sombra-flutuante: 0 2px 4px #1b25450f, 0 18px 40px -14px #1b254538;
+  --sombra-carimbo: 4px 4px 0 #1b2545;
+  --anel-foco: 0 0 0 3px #fcf8f1, 0 0 0 6px #0055a4;
+
+  /* espaçamento (base 4px) */
+  --espaco-1: 4px;
+  --espaco-2: 8px;
+  --espaco-3: 12px;
+  --espaco-4: 16px;
+  --espaco-5: 24px;
+  --espaco-6: 32px;
+  --espaco-7: 48px;
+  --espaco-8: 64px;
+  --espaco-9: 96px;
+
+  /* raios */
+  --raio-sm: 10px;
+  --raio-md: 16px;
+  --raio-lg: 24px;
+  --raio-xl: 36px;
+  --raio-pilula: 999px;
+
+  /* espessura de traço */
+  --traco-fino: 1.5px;
+  --traco: 2px;
+
+  /* famílias */
+  --font-titulo: Fredoka, "Varela Round", "Arial Rounded MT Bold", ui-rounded, system-ui, sans-serif;
+  --font-texto: Figtree, "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-nota: Caveat, "Segoe Print", "Bradley Hand", cursive;
+}

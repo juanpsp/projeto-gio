@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/ensemble.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paleta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&amp;family=Figtree:ital,wght@0,400..800;1,400..700&amp;family=Fredoka:wght@400..700&amp;display=swap">
+<style>.ds{padding:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;box-sizing:border-box}.ds-g{display:grid;gap:14px}.ds-lab{font:600 12px/16px var(--font-texto);letter-spacing:.06em;text-transform:uppercase;color:var(--encre-douce);margin:0}.ds-row{display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center}.ds-col{display:grid;gap:8px;justify-items:start}.ds-sub{font:500 13px/18px var(--font-texto);color:var(--encre-douce);margin:0}.prop{display:flex;height:56px;border-radius:14px;overflow:hidden;border:1.5px solid var(--ligne);font:600 13px/1 var(--font-texto)}.prop span{display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden}
+.sws{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}.sw{display:flex;gap:12px;align-items:flex-start}.sw-c{flex:none;width:64px;height:64px;border-radius:16px;border:1.5px solid var(--ligne);display:grid;place-items:center;font:600 22px/1 var(--font-titulo)}
+.sw-t{display:grid;gap:2px;font-size:13px;line-height:1.35;color:var(--encre-douce)}.sw-t b{font-size:15px;color:var(--encre)}.sw-t code{font:600 12px/1.2 ui-monospace,Menlo,monospace;color:var(--encre)}
+.combos{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}.combos div{padding:14px 16px;border-radius:14px;border:1.5px solid var(--ligne);font-size:15px;font-weight:500}.combos b{font-weight:700}</style>
+</head>
+<body>
+<div class="ds">
+<div class="ds-g"><p class="ds-lab">Proporção por tela</p>
+<div class="prop"><span style="flex:70;background:var(--papier)">papier + blanc · 70%</span><span style="flex:14;background:var(--encre);color:var(--texte-inverse)">encre</span><span style="flex:8;background:var(--bleu);color:var(--texte-inverse)">bleu</span><span style="flex:5;background:var(--rouge-action)"></span><span style="flex:3;background:var(--beurre)"></span></div>
+<p class="ds-sub">Branco quente manda; azul e vermelho são tempero. Se uma tela parece uma bandeira, tem cor demais.</p></div>
+<div class="ds-g"><p class="ds-lab">Cores e onde usar</p><div class="sws"><div class="sw"><div class="sw-c" style="background:var(--papier);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>papier</b><code>#FCF8F1</code><span>Fundo de todas as páginas (o 'branco' da bandeira).</span></div></div><div class="sw"><div class="sw-c" style="background:var(--papier-fonce);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>papier-fonce</b><code>#F5EEE2</code><span>Seções alternadas e rodapé.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--blanc);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>blanc</b><code>#FFFFFF</code><span>Cards, balões, campos.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--encre);color:var(--blanc)"><span>Aa</span></div><div class="sw-t"><b>encre</b><code>#1B2545</code><span>Texto principal e contornos desenhados.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--encre-douce);color:var(--blanc)"><span>Aa</span></div><div class="sw-t"><b>encre-douce</b><code>#545D78</code><span>Texto secundário e legendas.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--bleu);color:var(--blanc)"><span>Aa</span></div><div class="sw-t"><b>bleu</b><code>#0055A4</code><span>Botão secundário, links, números, bloco de destaque.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--bleu-fonce);color:var(--blanc)"><span>Aa</span></div><div class="sw-t"><b>bleu-fonce</b><code>#00417F</code><span>Hover e pressionado do azul.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--ciel);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>ciel</b><code>#E5EEFA</code><span>Tinta azul: balões da prof, blocos de info.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--rouge);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>rouge</b><code>#EF4135</code><span>Só detalhe: rabiscos, adesivos, ícones de destaque.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--rouge-action);color:var(--blanc)"><span>Aa</span></div><div class="sw-t"><b>rouge-action</b><code>#D0312A</code><span>Botão primário e texto vermelho pequeno.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--rouge-fonce);color:var(--blanc)"><span>Aa</span></div><div class="sw-t"><b>rouge-fonce</b><code>#A92119</code><span>Pressionado do primário; texto sobre rose.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--rose);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>rose</b><code>#FDE7E3</code><span>Tinta vermelha: balões do aluno, 'erro comum'.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--beurre);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>beurre</b><code>#FFD970</code><span>Apoio: marca-texto, adesivos, selos.</span></div></div><div class="sw"><div class="sw-c" style="background:var(--beurre-clair);color:var(--encre)"><span>Aa</span></div><div class="sw-t"><b>beurre-clair</b><code>#FFF3CC</code><span>Fundo da 'dica da prof' e post-its.</span></div></div></div></div>
+<div class="ds-g"><p class="ds-lab">Combinações aprovadas</p>
+<div class="combos">
+<div style="background:var(--papier);color:var(--encre)">encre em papier <b>14:1</b></div>
+<div style="background:var(--papier);color:var(--bleu)">bleu em papier <b>7:1</b></div>
+<div style="background:var(--bleu);color:var(--texte-inverse)">branco em bleu <b>7,4:1</b></div>
+<div style="background:var(--rouge-action);color:var(--texte-inverse)">branco em rouge-action <b>5:1</b></div>
+<div style="background:var(--ciel);color:var(--encre)">encre em ciel <b>12,8:1</b></div>
+<div style="background:var(--rose);color:var(--rouge-fonce)">rouge-fonce em rose <b>6:1</b></div>
+<div style="background:var(--beurre);color:var(--encre)">encre em beurre <b>11:1</b></div>
+<div style="background:var(--papier);color:var(--rouge);font:600 26px/1.1 var(--font-titulo)">rouge só ≥ 24px</div>
+</div>
+<p class="ds-sub">Nunca: texto pequeno em <b>rouge</b>, texto branco em <b>rouge</b> ou <b>beurre</b>, bleu sobre rouge.</p></div>
+</div>
+</body>
+</html>
