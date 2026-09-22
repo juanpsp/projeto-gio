@@ -13,6 +13,20 @@ Página única em HTML + CSS + JS puro, construída sobre o design system
   português; o francês fica nos balões, adesivos e no lema — nunca no botão que
   precisa ser entendido de primeira.
 
+## No ar
+
+**https://juanpsp.github.io/teacher-gio/** — GitHub Pages, servindo a branch
+`main` a partir da raiz. Cada `git push` republica sozinho em 1–2 minutos.
+
+> ⚠️ **É uma versão de revisão, não o lançamento.** O painel de revisão e o
+> conteúdo provisório estão no ar, e o repositório é **público** (GitHub Pages
+> em conta gratuita exige isso) — a foto dela e os textos com `[a confirmar]`
+> estão visíveis para quem tiver o link.
+>
+> Por isso a página leva `<meta name="robots" content="noindex, nofollow">`:
+> o Google não indexa essa versão. **Apagar essa linha** quando o conteúdo real
+> entrar e a página for pro ar de verdade.
+
 ## Rodar
 
 ```bash
@@ -74,9 +88,10 @@ Falta, por seção:
 > O `CLAUDE.md` do design system é explícito: número, depoimento, nome e foto
 > de aluno **não podem ser inventados**. Por isso nada foi preenchido no chute.
 
-### 3. Tirar o painel de revisão
+### 3. Tirar o painel de revisão e o noindex
 
-Antes de publicar, remover do `index.html`:
+Antes de publicar de verdade, remover o `<meta name="robots">` do `<head>`
+(senão a página nunca aparece no Google) e tirar do `index.html`:
 
 - o bloco `<aside class="painel" id="painel">`
 - o bloco `/* Painel provisório */` no fim do `css/pagina.css`
