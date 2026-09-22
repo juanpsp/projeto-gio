@@ -6,8 +6,8 @@
 <title>Gio — Aulas de francês</title>
 <meta name="description" content="Aulas de francês com quem já esteve no seu lugar e sabe o caminho. Por vídeo chamada, no seu ritmo. On apprend ensemble.">
 
-<!-- VERSÃO DE REVISÃO: a página ainda tem conteúdo provisório e o painel de
-     revisão. Esta linha impede que o Google indexe isso com o nome dela.
+<!-- A página ainda tem conteúdo provisório (marcado "a confirmar").
+     Esta linha impede que o Google indexe isso com o nome dela.
      APAGAR quando o conteúdo real entrar e a página for pro ar de verdade. -->
 <meta name="robots" content="noindex, nofollow">
 
@@ -48,8 +48,6 @@
 <section class="secao hero" aria-labelledby="hero-titulo">
   <div class="caixa">
 
-    <!-- ─── Hero versão A: recorte sobre forma orgânica ─── -->
-    <div class="hero-versao is-ativa" id="hero-a">
       <div class="hero__grade">
         <div class="hero__texto">
           <p class="en-rotulo" data-anima>Professora de francês</p>
@@ -133,54 +131,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- ─── Hero versão B: polaroid ─── -->
-    <div class="hero-versao" id="hero-b">
-      <div class="hero__grade">
-        <div class="hero__texto">
-          <p class="en-rotulo" data-anima>Professora de francês</p>
-          <h1 class="en-display" data-anima style="--atraso:1">
-            A gente aprende
-            <span class="sublinha">junto<svg class="rabisco" viewBox="0 0 200 16" fill="none" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 10c14-8 26 4 42-2s30-4 46 1 32 5 48-2 34-4 58 1" stroke="#ef4135" stroke-width="3.5" vector-effect="non-scaling-stroke"/></svg></span>.
-          </h1>
-          <p class="en-lead" data-anima style="--atraso:2">
-            Eu já estive no seu lugar: comecei do zero e sei exatamente onde o francês trava.
-            Hoje eu te mostro o caminho — e te ensino a aprender.
-          </p>
-          <div class="hero__acoes" data-anima style="--atraso:4">
-            <a class="en-btn en-btn--primario en-btn--grande en-btn--bloco" href="#contato" data-wa>
-              Quero começar
-              <svg class="en-icone en-btn__seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
-            </a>
-            <a class="en-link en-link--seta" href="#aulas">Ver como funciona
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-          <div class="hero__selos" data-anima style="--atraso:5">
-            <span class="en-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z"/><path d="m16.5 11 4-2.6a.8.8 0 0 1 1.2.7v5.8a.8.8 0 0 1-1.2.7l-4-2.6V11Z"/></svg>
-              Por vídeo chamada
-            </span>
-            <span class="en-tag en-tag--ponto">Cara a cara, ao vivo</span>
-            <span class="en-tag en-tag--beurre">Do zero ao avançado</span>
-          </div>
-        </div>
-
-        <div class="hero__foto">
-          <div class="retrato-polaroid" data-anima="pop" style="--atraso:2">
-            <figure class="en-foto">
-              <span class="en-fita" aria-hidden="true"></span>
-              <picture>
-                <source srcset="img/gio-retrato.webp" type="image/webp">
-                <img src="img/gio-retrato.jpg" width="760" height="950" alt="Gio, professora de francês, sorrindo.">
-              </picture>
-              <figcaption class="en-foto__legenda">c'est moi!</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 </section>
@@ -1024,33 +974,6 @@
   WhatsApp
 </a>
 
-<!-- ══════════════════ Painel provisório — REMOVER ANTES DE PUBLICAR ══════════════════ -->
-<aside class="painel" id="painel">
-  <button class="painel__fechar" type="button" id="painel-fechar" aria-label="Fechar painel de revisão">×</button>
-  <button class="painel__titulo" type="button" id="painel-alternar" aria-expanded="true" aria-controls="painel-corpo">
-    Revisão <span class="painel__seta" aria-hidden="true">▾</span>
-  </button>
-  <div class="painel__corpo" id="painel-corpo">
-    <div class="painel__linha">
-      <span>Hero:</span>
-      <button type="button" id="btn-hero-a" aria-pressed="true">A · recorte</button>
-      <button type="button" id="btn-hero-b" aria-pressed="false">B · polaroid</button>
-    </div>
-    <div class="painel__linha">
-      <span>Marcações:</span>
-      <button type="button" id="btn-marcas" aria-pressed="true">ligadas</button>
-    </div>
-    <div class="painel__linha">
-      <span>Movimento:</span>
-      <button type="button" id="btn-movimento" aria-pressed="false">forçar</button>
-    </div>
-    <p class="painel__aviso" id="painel-aviso" hidden>
-      Este navegador está com <strong>movimento reduzido</strong>: as animações
-      estão desligadas de propósito e tudo aparece no estado final. Clique em
-      <strong>forçar</strong> pra ver a boina cair e as mensagens chegarem.
-    </p>
-  </div>
-</aside>
 
 <script src="js/animacoes.js" defer></script>
 </body>

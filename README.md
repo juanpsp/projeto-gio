@@ -19,10 +19,9 @@ Página única em HTML + CSS + JS puro, construída sobre o design system
 `main` a partir da raiz. Cada `git push` republica sozinho em 1–2 minutos.
 (O repositório se chamava `teacher-gio`; o link antigo não funciona mais.)
 
-> ⚠️ **É uma versão de revisão, não o lançamento.** O painel de revisão e o
-> conteúdo provisório estão no ar, e o repositório é **público** (GitHub Pages
-> em conta gratuita exige isso) — a foto dela e os textos com `[a confirmar]`
-> estão visíveis para quem tiver o link.
+> ⚠️ **Ainda não é o lançamento.** O conteúdo provisório está no ar, e o
+> repositório é **público** (GitHub Pages em conta gratuita exige isso) — a foto
+> dela e os textos com `[a confirmar]` estão visíveis para quem tiver o link.
 >
 > Por isso a página leva `<meta name="robots" content="noindex, nofollow">`:
 > o Google não indexa essa versão. **Apagar essa linha** quando o conteúdo real
@@ -44,7 +43,7 @@ pelo `file://` também funciona, mas as fontes do Google só carregam com intern
 | `index.html` | A página inteira: as 12 seções, mais o quadro do Sena (3b) e o "Você sabia?" (11b) |
 | `css/pagina.css` | Layout da página + movimento + marcação de conteúdo provisório |
 | `js/animacoes.js` | Todo o movimento. **A configuração fica no topo do arquivo.** |
-| `img/` | Fotos. `gio-recorte.*` (fundo removido), `gio-retrato.*` (polaroid), `gio-selfie-esboco.*` (a Gio em grafite no quadro — **provisória**, sai quando chegar a ilustração definitiva) |
+| `img/` | Fotos. `gio-recorte.*` (fundo removido), `gio-retrato.*` (sem uso desde que o hero B saiu), `gio-selfie-esboco.*` (a Gio em grafite no quadro — **provisória**, sai quando chegar a ilustração definitiva) |
 | `ferramentas/cena-sena.js` | Gera o desenho do quadro (Sena, Torre, Louvre, Arco) e injeta no `index.html`. Mudou o desenho? `node ferramentas/cena-sena.js` |
 | `ensemble-design-system/` | O design system. **Não editar a partir da landing.** |
 
@@ -76,7 +75,7 @@ rodapé mostra `[Instagram]` marcado como pendente.
 
 Tudo que só a Gio pode confirmar está marcado em amarelo com **A CONFIRMAR**,
 e os blocos inteiros que dependem de dado real têm contorno vermelho tracejado.
-O painel no canto inferior esquerdo liga e desliga essa marcação.
+A marcação some sozinha de cada trecho quando o conteúdo real entra no lugar.
 
 Falta, por seção:
 
@@ -95,18 +94,12 @@ Falta, por seção:
 > O `CLAUDE.md` do design system é explícito: número, depoimento, nome e foto
 > de aluno **não podem ser inventados**. Por isso nada foi preenchido no chute.
 
-### 3. Tirar o painel de revisão e o noindex
+### 3. Tirar o noindex
 
-Antes de publicar de verdade, remover o `<meta name="robots">` do `<head>`
-(senão a página nunca aparece no Google) e tirar do `index.html`:
-
-- o bloco `<aside class="painel" id="painel">`
-- o bloco `/* Painel provisório */` no fim do `css/pagina.css`
-- o bloco `7. Painel provisório de revisão` no `js/animacoes.js`
-- o bloco `MARCAÇÃO DE CONTEÚDO PROVISÓRIO` no `css/pagina.css`
-- o `:not(.testar-movimento)` do bloco `prefers-reduced-motion` no `css/pagina.css`
-
-E escolher uma das duas versões de hero, apagando a outra (`#hero-a` ou `#hero-b`).
+O painel de revisão já saiu (e com ele a versão B do hero — ficou a A, a da
+boina). Falta, antes de publicar de verdade, remover o `<meta name="robots">`
+do `<head>` (senão a página nunca aparece no Google) e, com todo o conteúdo
+real no lugar, o bloco `MARCAÇÃO DE CONTEÚDO PROVISÓRIO` do `css/pagina.css`.
 
 ## O movimento
 
@@ -148,8 +141,8 @@ Três detalhes que custaram a achar e é bom não desfazer:
   entra e sai do fluxo, empurrando tudo abaixo. A trava é solta no fim, porque é
   medida em px e não sobreviveria a um giro de tela.
 
-Com movimento reduzido o salto continua seco, que é o correto — e aí o
-`scroll-margin-top: 76px` do CSS é que desconta a barra fixa.
+Sem JS o salto é seco — e aí o `scroll-margin-top: 76px` do CSS é que desconta
+a barra fixa.
 
 ### A boina
 
@@ -175,30 +168,24 @@ node img/_medir-cabeca.js
 ```
 
 A queda é comandada pela rolagem em `js/animacoes.js` (bloco `6b`): começa quando
-a foto assoma no rodapé da tela e termina com a cabeça a ~35% da altura. Com
-movimento reduzido, a boina já aparece pousada, parada. No hero B (polaroid) ela
-não existe.
+a foto assoma no rodapé da tela e termina com a cabeça a ~35% da altura.
 
-**Movimento reduzido:** o JS só põe a classe `.movimento` no `<html>` quando o
-visitante aceita animação. Sem JS ou com `prefers-reduced-motion: reduce`,
-nenhuma regra de movimento existe e a página já nasce montada — não é um
-"desligar depois", é não ligar.
+### A página anima sempre
 
-### "As animações não estão funcionando"
+O JS põe a classe `.movimento` no `<html>` e, sem JS, nenhuma regra de
+movimento existe e a página já nasce montada.
 
-Quase sempre é isso: **o navegador está com movimento reduzido**. O painel de
-preview do app Claude força `prefers-reduced-motion: reduce`, então nele a boina
-já nasce pousada, as mensagens aparecem todas juntas e nada se mexe. Não é
-defeito — é o caminho de acessibilidade fazendo o que deve.
+**Decisão do projeto:** a página **não** obedece ao pedido de "menos movimento"
+do sistema (`prefers-reduced-motion`). No Windows, basta *Configurações →
+Acessibilidade → Efeitos visuais → Efeitos de animação* estar desligado pra o
+navegador pedir isso a todos os sites — e aí a boina, o quadro e a rota dos
+países ficariam parados. Isso contraria a regra 7 do Ensemble, de propósito.
 
-Para ver o movimento: o botão **Movimento · forçar** no painel de revisão
-(a escolha fica guardada entre recarregamentos) ou `?movimento=1` na URL.
-Quando o navegador está com movimento reduzido, o painel abre sozinho com um
-aviso explicando isso.
-
-No Chrome normal do Windows isso depende de *Configurações → Acessibilidade →
-Efeitos visuais → Efeitos de animação*. Com esse botão ligado, as animações
-rodam sem precisar forçar nada.
+Para voltar a respeitar o pedido: no topo do `js/animacoes.js`, trocar
+`var menosMovimento = false` por
+`window.matchMedia('(prefers-reduced-motion: reduce)').matches`, e apagar o
+bloco "Anima sempre" do `css/pagina.css` (ele religa transições que o Ensemble
+desliga nesse caso).
 
 ## As fotos
 
@@ -207,7 +194,8 @@ rodam sem precisar forçar nada.
 - `gio-recorte.webp` / `.png` — fundo removido por flood fill a partir das bordas,
   com suavização de borda e descontaminação do branco no cabelo. Usado no hero A,
   com uma máscara CSS que dissolve o corte reto dos ombros.
-- `gio-retrato.webp` / `.jpg` — recorte 4:5 do original, para a polaroid do hero B.
+- `gio-retrato.webp` / `.jpg` — recorte 4:5 do original, era da polaroid do hero B
+  (que saiu junto com o painel de revisão); hoje não é usado pela página.
 
 Para trocar a foto depois, o script que fez o recorte está no scratchpad da
 sessão; qualquer ferramenta de remoção de fundo serve, desde que saia PNG/WebP

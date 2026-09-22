@@ -1,8 +1,8 @@
 /* ==========================================================================
    Landing — Gio
    Movimento da página. Sem biblioteca: IntersectionObserver + transform.
-   Regra do design system: movimento pequeno, com mola, e tudo para
-   quando o visitante pede menos movimento.
+   Regra do design system: movimento pequeno e com mola. (A regra de parar
+   tudo quando o visitante pede menos movimento está desligada — ver abaixo.)
    ========================================================================== */
 (function () {
   'use strict';
@@ -21,18 +21,13 @@
     instagram: ''
   };
 
-  // Escape só para revisão: mostra as animações mesmo num navegador com
-  // "reduzir movimento" ligado (o painel de preview do app força isso).
-  // Vale por ?movimento=1 ou pelo botão do painel, que fica lembrado.
-  // Sai junto com o painel, antes de publicar.
-  var forcado = /[?&]movimento=1/.test(location.search);
-  try {
-    if (!forcado && document.getElementById('painel') &&
-        localStorage.getItem('gio-movimento') === '1') forcado = true;
-  } catch (e) {}
-  if (forcado) document.documentElement.classList.add('testar-movimento');
-
-  var menosMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches && !forcado;
+  // Decisão do projeto: a página anima SEMPRE, mesmo quando o sistema pede
+  // "menos movimento" (no Windows, "Efeitos de animação" desligado faz o
+  // navegador pedir isso). Contraria a regra 7 do Ensemble, de propósito.
+  // Para voltar a respeitar o pedido, troque o false por:
+  //   window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  // e apague o bloco "Anima sempre" do css/pagina.css.
+  var menosMovimento = false;
 
   // A partir daqui o CSS de movimento existe. Sem JS, a página nasce pronta.
   if (!menosMovimento) document.documentElement.classList.add('movimento');
@@ -569,91 +564,5 @@
         ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
       window.scrollTo(0, el ? posicaoDe(el) : 0);
     });
-  }
-
-  /* ─────────────────────────────────────────────────────────────
-     8. Painel provisório de revisão (sai antes de publicar)
-     ───────────────────────────────────────────────────────────── */
-  var painel = $('#painel');
-  if (painel) {
-    var heroA = $('#hero-a');
-    var heroB = $('#hero-b');
-    var btnA = $('#btn-hero-a');
-    var btnB = $('#btn-hero-b');
-    var btnMarcas = $('#btn-marcas');
-
-    function trocaHero(qual) {
-      var ativo = qual === 'b' ? heroB : heroA;
-      var inativo = qual === 'b' ? heroA : heroB;
-      if (!ativo || !inativo) return;
-      inativo.classList.remove('is-ativa');
-      ativo.classList.add('is-ativa');
-      btnA.setAttribute('aria-pressed', String(qual !== 'b'));
-      btnB.setAttribute('aria-pressed', String(qual === 'b'));
-      // O hero está no topo: revela na hora em vez de esperar o observador.
-      $$('[data-anima], .rabisco', ativo).forEach(mostra);
-      try { localStorage.setItem('gio-hero', qual); } catch (e) {}
-    }
-
-    if (btnA) btnA.addEventListener('click', function () { trocaHero('a'); });
-    if (btnB) btnB.addEventListener('click', function () { trocaHero('b'); });
-
-    if (btnMarcas) {
-      btnMarcas.addEventListener('click', function () {
-        var ligadas = !document.documentElement.classList.toggle('sem-marcas');
-        btnMarcas.setAttribute('aria-pressed', String(ligadas));
-        btnMarcas.textContent = ligadas ? 'ligadas' : 'desligadas';
-        try { localStorage.setItem('gio-marcas', ligadas ? '1' : '0'); } catch (e) {}
-      });
-    }
-
-    // Forçar movimento: para conferir as animações numa máquina que está
-    // com "reduzir movimento" ligado no sistema.
-    // Avisa que é o navegador que está com movimento reduzido — senão
-    // parece que as animações quebraram, quando na verdade estão
-    // desligadas de propósito.
-    var aviso = $('#painel-aviso');
-    var temAviso = !!aviso && menosMovimento;
-    if (temAviso) aviso.hidden = false;
-
-    var btnMovimento = $('#btn-movimento');
-    if (btnMovimento) {
-      btnMovimento.setAttribute('aria-pressed', String(forcado));
-      btnMovimento.textContent = forcado ? 'forçado' : 'forçar';
-      btnMovimento.addEventListener('click', function () {
-        try { localStorage.setItem('gio-movimento', forcado ? '0' : '1'); } catch (e) {}
-        var url = new URL(location.href);
-        url.searchParams.delete('movimento');   // fica guardado, não precisa sujar a URL
-        location.href = url.toString();
-      });
-    }
-
-    // Recolher / expandir
-    var alternar = $('#painel-alternar');
-    function recolhe(sim) {
-      painel.classList.toggle('is-recolhido', sim);
-      if (alternar) alternar.setAttribute('aria-expanded', String(!sim));
-      try { localStorage.setItem('gio-painel', sim ? '0' : '1'); } catch (e) {}
-    }
-    if (alternar) {
-      alternar.addEventListener('click', function () {
-        recolhe(!painel.classList.contains('is-recolhido'));
-      });
-    }
-
-    var fechar = $('#painel-fechar');
-    if (fechar) fechar.addEventListener('click', function () { painel.remove(); });
-
-    // Lembra as escolhas entre recarregamentos
-    try {
-      if (localStorage.getItem('gio-hero') === 'b') trocaHero('b');
-      if (localStorage.getItem('gio-marcas') === '0' && btnMarcas) btnMarcas.click();
-      var guardado = localStorage.getItem('gio-painel');
-      // No celular ele começa recolhido para não tapar a página — mas se há
-      // aviso de movimento reduzido, abre pra pessoa ler o recado.
-      recolhe(!temAviso && (guardado === null ? window.innerWidth < 700 : guardado === '0'));
-    } catch (e) {
-      recolhe(!temAviso && window.innerWidth < 700);
-    }
   }
 })();
